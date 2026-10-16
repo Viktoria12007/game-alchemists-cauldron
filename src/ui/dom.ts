@@ -22,10 +22,10 @@ export function link(text: string, href: string, className?: string): HTMLAnchor
 }
 
 export function image(source: string, alt: string, className?: string): HTMLImageElement {
-    const node = element('img', className);
-    node.src = source;
-    node.alt = alt;
-    return node;
+  const node = element('img', className);
+  node.src = source;
+  node.alt = alt;
+  return node;
 }
 
 export function button(text: string, className?: string): HTMLButtonElement {
