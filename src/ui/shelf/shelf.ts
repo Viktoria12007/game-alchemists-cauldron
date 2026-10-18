@@ -1,7 +1,7 @@
 import { add, element } from '../dom.ts';
 import { ingredientCatalogue } from '../../data/ingredients.ts';
 import { createIngredientCard } from '../ingredient-card/ingredient-card.ts';
-import {amountShowedCards} from "../../data/constants.ts";
+import { amountShowedCards } from '../../data/constants.ts';
 
 export function createShelf() {
   const ingredientsList = element('ul', 'ingredients-list');

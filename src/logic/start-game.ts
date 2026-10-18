@@ -1,7 +1,7 @@
 import state from '../state/game-state.ts';
 import { createStock } from './create-stock.ts';
 import { ingredientCatalogue } from '../data/ingredients.ts';
-import {renderApp} from "./render-app.ts";
+import { renderApp } from './render-app.ts';
 
 export function startGame() {
   state.status = 'playing';

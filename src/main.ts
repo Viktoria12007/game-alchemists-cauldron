@@ -1,4 +1,4 @@
 import './styles/main.scss';
-import {renderApp} from "./logic/render-app.ts";
+import { renderApp } from './logic/render-app.ts';
 
 renderApp();
