@@ -1,8 +1,9 @@
 .ingredients-list {
-  width: 30%;
+  place-self: stretch;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-between;
   background-image: url('../../assets/ingredient-shelf.png');
   background-repeat: no-repeat;
   background-position: center center;
