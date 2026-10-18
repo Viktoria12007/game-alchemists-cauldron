@@ -4,6 +4,7 @@
 @use '../ui/ingredient-card/ingredient-card';
 @use '../ui/shelf/shelf';
 @use '../ui/cauldron/cauldron';
+@use '../ui/control-panel/control-panel';
 
 * {
   box-sizing: border-box;
@@ -16,7 +17,7 @@ html {
 body {
   margin: 0;
   background: $bg;
-  color: $on-bg;
+  color: $white;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-size: $body-medium;
   font-weight: $medium;
