@@ -1,4 +1,9 @@
 .game-main {
+  min-height: 100vh;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  place-items: center stretch;
   background-image: url('../../assets/game-background.png');
   background-repeat: no-repeat;
   background-size: cover;
