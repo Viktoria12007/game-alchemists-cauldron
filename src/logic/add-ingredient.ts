@@ -1,12 +1,13 @@
 import state from '../state/game-state.ts';
 import { ingredientCatalogue } from '../data/ingredients.ts';
 import type { IIngredient } from '../types/types.ts';
+import {renderApp} from "./render-app.ts";
 
 export function addIngredient(id: string) {
   if (!(
     state.cauldronIngredients &&
     state.cauldronIngredients.length < 4 &&
-    state.shelfStock[id] > 0
+    Object.hasOwn(state.shelfStock, id) && state.shelfStock[id] > 0
   )) {
     return;
   }
@@ -15,4 +16,5 @@ export function addIngredient(id: string) {
   state.cauldronIngredients.push(
     ingredientCatalogue.find((ingredient) => ingredient.id === id) as IIngredient,
   );
+  renderApp();
 }
