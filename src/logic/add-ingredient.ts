@@ -5,7 +5,6 @@ import { renderApp } from './render-app.ts';
 
 export function addIngredient(id: string) {
   if (!(
-    state.cauldronIngredients &&
     state.cauldronIngredients.length < 4 &&
     Object.hasOwn(state.shelfStock, id) &&
     state.shelfStock[id] > 0
