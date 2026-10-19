@@ -1,0 +1,19 @@
+.current-recipe {
+  place-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-image: url('../../assets/current-recipe.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  &__property--highlighted {
+    color: #b8ff63;
+    font-weight: 700;
+    text-shadow:
+      0 0 6px rgb(152 255 67 / 85%),
+      0 1px 3px #000;
+  }
+}
