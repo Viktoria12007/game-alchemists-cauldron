@@ -32,4 +32,18 @@ interface IGameState {
   shelfStock: Record<string, number>; // ingredient id -> portions left
 }
 
-export type { IIngredient, IGameState, IRecipe };
+interface IBarRange {
+  min: number;
+  max: number;
+}
+
+interface IBarOptions {
+  id: string;
+  label: string;
+  value: number;
+  target: IBarRange;
+  tone: 'temperature' | 'density' | 'magic';
+  icon: string;
+}
+
+export type { IIngredient, IGameState, IRecipe, IBarRange, IBarOptions };
