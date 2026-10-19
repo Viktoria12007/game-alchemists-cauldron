@@ -9,6 +9,7 @@ const state: IGameState = {
   activeRecipe: recipePool[0],
   cauldronIngredients: [],
   shelfStock: {},
+  startGame: true,
 };
 
 export default state;
