@@ -30,6 +30,7 @@ interface IGameState {
   activeRecipe: IRecipe;
   cauldronIngredients: IIngredient[];
   shelfStock: Record<string, number>; // ingredient id -> portions left
+  startGame: boolean;
 }
 
 interface IBarRange {
