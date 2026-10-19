@@ -2,7 +2,7 @@ import type { IIngredient } from '../../types/types.ts';
 import { add, button, element, image } from '../dom.ts';
 import state from '../../state/game-state.ts';
 import { addIngredient } from '../../logic/add-ingredient.ts';
-import { cauldronHolds } from '../../data/constants.ts';
+import { settings } from '../../data/settings.ts';
 
 export function createIngredientCard(ingredient: IIngredient) {
   const card = element('div', 'ingredient-card');
@@ -26,7 +26,8 @@ export function createIngredientCard(ingredient: IIngredient) {
   const addButton = button('', 'ingredient-card__button');
   addButton.addEventListener('click', () => addIngredient(ingredient.id));
   addButton.disabled =
-    state.shelfStock[ingredient.id] === 0 || state.cauldronIngredients.length === cauldronHolds;
+    state.shelfStock[ingredient.id] === 0 ||
+    state.cauldronIngredients.length === settings.maxCauldronIngredients;
   add(wrap, title, properties);
   add(card, icon, wrap, addButton);
   return card;
