@@ -1,4 +1,4 @@
-import { createLayout } from '../ui/layout/layout.ts';
+import { createLayout } from '../../ui/layout/layout.ts';
 
 export function renderApp() {
   const app = document.querySelector<HTMLDivElement>('#app');

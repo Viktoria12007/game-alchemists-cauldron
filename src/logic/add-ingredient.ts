@@ -1,7 +1,7 @@
 import state from '../state/game-state.ts';
 import { ingredientCatalogue } from '../data/ingredients.ts';
 import type { IIngredient } from '../types/types.ts';
-import { renderApp } from './render-app.ts';
+import { renderApp } from './render/render-app.ts';
 
 export function addIngredient(id: string) {
   if (!(
