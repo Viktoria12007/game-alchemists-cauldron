@@ -8,6 +8,11 @@
 @use '../ui/bar/bar';
 @use '../ui/bars-panel/bars-panel';
 @use '../ui/current-recipe/current-recipe';
+@use '../ui/modal-window/modal-window';
+@use '../ui/lives-panel/lives-panel';
+@use '../ui/lives/lives';
+@use '../ui/timer/timer';
+@use '../ui/game-over/game-over';
 
 * {
   box-sizing: border-box;
