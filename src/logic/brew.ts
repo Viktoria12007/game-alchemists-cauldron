@@ -1,5 +1,5 @@
 import state from '../state/game-state.ts';
-import { renderApp } from './render-app.ts';
+import { renderApp } from './render/render-app.ts';
 import { recipeGenerator } from './recipe-generator.ts';
 import { calculateCauldron } from './calculate-cauldron.ts';
 import { settings } from '../data/settings.ts';
@@ -15,11 +15,34 @@ export function brew() {
     values.magicPower <= state.activeRecipe.magicPower.max + settings.tolerance;
   if (isSuccess) {
     state.score += 200;
-    state.timeLeft += 10;
+    if (state.timeLeft + 10 > settings.maxSecondsTimer) {
+      state.timeLeft = settings.maxSecondsTimer;
+    } else {
+      state.timeLeft += 10;
+    }
     state.activeRecipe = recipeGenerator();
   } else {
     state.lives -= 1;
+    if (state.lives === 0) {
+      state.reasonGameOver = 'Lives reach 0!';
+      state.timeLeft = 0;
+      state.cauldronIngredients = [];
+      state.status = 'game-over';
+      return;
+    }
   }
+
+  if (state.status !== 'game-over') {
+    const isEmptyStore = Object.values(state.shelfStock).every((value) => value === 0);
+    if (isEmptyStore) {
+      state.reasonGameOver = 'Out of ingredients!';
+      state.timeLeft = 0;
+      state.cauldronIngredients = [];
+      state.status = 'game-over';
+      return;
+    }
+  }
+
   state.cauldronIngredients = [];
   renderApp();
 }
