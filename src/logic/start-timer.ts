@@ -10,7 +10,7 @@ export function startTimer() {
         state.reasonGameOver = 'The timer has expired!';
       }
       state.status = 'game-over';
-        clearInterval(timer);
+      clearInterval(timer);
       renderApp();
       return;
     }
