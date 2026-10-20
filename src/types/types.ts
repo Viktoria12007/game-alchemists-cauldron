@@ -31,6 +31,8 @@ interface IGameState {
   cauldronIngredients: IIngredient[];
   shelfStock: Record<string, number>; // ingredient id -> portions left
   startGame: boolean;
+  closeModalWindow: () => void;
+  reasonGameOver: string;
 }
 
 interface IBarRange {
