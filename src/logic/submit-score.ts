@@ -11,5 +11,6 @@ export function submitScore(event: SubmitEvent, name: string) {
     date: Date.now(),
   };
   addLeader(player);
+  state.score = 0;
   renderLeaderboard();
 }
