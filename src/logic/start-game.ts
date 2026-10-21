@@ -7,17 +7,10 @@ import { startTimer } from './start-timer.ts';
 import { createLayout } from '../ui/layout/layout.ts';
 
 export function startGame() {
-  state.status = 'playing';
-  state.score = 0;
-  state.lives = settings.lives;
   state.activeRecipe = recipeGenerator();
-  state.cauldronIngredients = [];
   createStock(ingredientCatalogue);
   state.timeLeft = settings.maxSecondsTimer;
   startTimer();
-  state.startGame = false;
-  state.reasonGameOver = '';
-  state.closeModalWindow = () => {};
-  renderApp();
+  state.startGame = true;
   createLayout();
 }
