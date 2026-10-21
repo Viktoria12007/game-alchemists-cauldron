@@ -23,12 +23,13 @@ export function createGameOver() {
     input.minLength = 2;
     input.maxLength = 15;
     input.required = true;
-    input.pattern = '[a-zA-Z0-9 _-]{2,15}';
+    input.pattern = String.raw`[a-zA-Z0-9 _\-]{2,15}`;
+    input.title = 'Accept names with 2–15 characters: letters, digits, space, _ and -';
     const mainButton = button('Submit score', 'button game-over__button');
     mainButton.type = 'submit';
     form.addEventListener('submit', (event) => {
       if (input.checkValidity()) {
-        submitScore(event, input.value);
+        submitScore(event, input.value.trim());
       }
     });
     add(form, label, input, mainButton);
