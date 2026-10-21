@@ -5,6 +5,9 @@ import { createLayout } from '../ui/layout/layout.ts';
 export function startTimer() {
   const endTime = Date.now() + state.timeLeft * 1000;
   const timer = setInterval(() => {
+    if (state.status === 'paused') {
+      clearInterval(timer);
+    }
     if (timer && state.timeLeft <= 0) {
       if (!state.reasonGameOver) {
         state.reasonGameOver = 'The timer has expired!';
