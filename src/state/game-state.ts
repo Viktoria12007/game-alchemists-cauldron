@@ -10,7 +10,7 @@ const state: IGameState = {
   activeRecipe: recipePool[0],
   cauldronIngredients: [],
   shelfStock: {},
-  startGame: true,
+  startGame: false,
   closeModalWindow: () => {},
   reasonGameOver: '',
 };
