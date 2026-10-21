@@ -67,6 +67,19 @@ p {
   margin-right: auto;
 }
 
+.confirm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
 @media (max-width: 1024px) {
   body {
     font-size: $body-small;
