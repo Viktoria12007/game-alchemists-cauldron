@@ -49,4 +49,15 @@ interface IBarOptions {
   icon: string;
 }
 
-export type { IIngredient, IGameState, IRecipe, IBarRange, IBarOptions };
+interface ILeader {
+  id: string;
+  name: string;
+  score: number;
+  date: number;
+}
+
+interface IStorage {
+  leaderboard: ILeader[];
+}
+
+export type { IIngredient, IGameState, IRecipe, IBarRange, IBarOptions, ILeader, IStorage };
