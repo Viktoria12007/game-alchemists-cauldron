@@ -1,6 +1,6 @@
 import { add, button, element } from '../dom.ts';
 import state from '../../state/game-state.ts';
-import { startGame } from '../../logic/start-game.ts';
+import { playAgain } from '../../logic/play-again.ts';
 
 export function createGameOver() {
   const gameOver = element('div', 'game-over');
@@ -23,10 +23,7 @@ export function createGameOver() {
   mainButton.type = 'submit';
   const secondaryButton = button('Play again', 'game-over__button');
   secondaryButton.type = 'button';
-  secondaryButton.addEventListener('click', () => {
-    startGame();
-    state.closeModalWindow();
-  });
+  secondaryButton.addEventListener('click', playAgain);
   add(actions, mainButton, secondaryButton);
   add(form, label, input, actions);
   add(gameOver, title, reason, subtitle, score, form);
