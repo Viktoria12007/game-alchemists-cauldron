@@ -1,7 +1,7 @@
 import state from '../state/game-state.ts';
 import { ingredientCatalogue } from '../data/ingredients.ts';
 import type { IIngredient } from '../types/types.ts';
-import { renderApp } from './render/render-app.ts';
+import { createLayout } from '../ui/layout/layout.ts';
 
 export function addIngredient(id: string) {
   if (!(
@@ -16,5 +16,5 @@ export function addIngredient(id: string) {
   state.cauldronIngredients.push(
     ingredientCatalogue.find((ingredient) => ingredient.id === id) as IIngredient,
   );
-  renderApp();
+  createLayout();
 }
