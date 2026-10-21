@@ -1,4 +1,4 @@
-type GameStatus = 'menu' | 'playing' | 'paused' | 'game-over';
+type GameStatus = 'menu' | 'playing' | 'paused' | 'game-over' | 'leaderboard';
 
 interface IIngredient {
   id: string;
