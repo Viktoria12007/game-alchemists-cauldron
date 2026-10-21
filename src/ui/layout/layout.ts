@@ -1,4 +1,4 @@
-import { add, element } from '../dom.ts';
+import { add } from '../dom.ts';
 import { createShelf } from '../shelf/shelf.ts';
 import { createCauldron } from '../cauldron/cauldron.ts';
 import { createControlPanel } from '../control-panel/control-panel.ts';
@@ -8,24 +8,39 @@ import { createLivesPanel } from '../lives-panel/lives-panel.ts';
 import { openModalWindow } from '../modal-window/modal-window.ts';
 import state from '../../state/game-state.ts';
 import { createGameOver } from '../game-over/game-over.ts';
+import { createPause } from '../pause/pause.ts';
 
 export function createLayout() {
-  const main = element('main', 'container game-main');
+  const main = document.querySelector('.game-main');
+  if (!main) return;
 
-  if (state.status === 'playing') {
-    add(
-      main,
-      createLivesPanel(),
-      createShelf(),
-      createCauldron(),
-      createCurrentRecipe(),
-      createBarsPanel(),
-      createControlPanel(),
-    );
-  } else if (state.status === 'game-over') {
-    const modalWindow = openModalWindow({ content: createGameOver() });
-    state.closeModalWindow = modalWindow.close;
-    add(main, modalWindow.element);
+  switch (state.status) {
+    case 'playing': {
+      main.replaceChildren(
+        createLivesPanel(),
+        createShelf(),
+        createCauldron(),
+        createCurrentRecipe(),
+        createBarsPanel(),
+        createControlPanel(),
+      );
+      break;
+    }
+    case 'game-over': {
+      const modalWindow = openModalWindow({ content: createGameOver() });
+      state.closeModalWindow = modalWindow.close;
+      add(main, modalWindow.element);
+      break;
+    }
+    case 'paused': {
+      const modalWindow = openModalWindow({ content: createPause() });
+      state.closeModalWindow = modalWindow.close;
+      add(main, modalWindow.element);
+      break;
+    }
+    default: {
+      return main;
+    }
   }
 
   return main;

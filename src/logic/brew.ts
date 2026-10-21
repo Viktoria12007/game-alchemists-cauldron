@@ -1,8 +1,8 @@
 import state from '../state/game-state.ts';
-import { renderApp } from './render/render-app.ts';
 import { recipeGenerator } from './recipe-generator.ts';
 import { calculateCauldron } from './calculate-cauldron.ts';
 import { settings } from '../data/settings.ts';
+import { createLayout } from '../ui/layout/layout.ts';
 
 export function brew() {
   const values = calculateCauldron(state.cauldronIngredients);
@@ -44,5 +44,5 @@ export function brew() {
   }
 
   state.cauldronIngredients = [];
-  renderApp();
+  createLayout();
 }

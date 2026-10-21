@@ -1,12 +1,18 @@
 @use '../../styles/variables' as *;
 
 .timer {
-  transition: $transition;
-  &__danger {
-    color: red;
-    animation: impulse 1s infinite;
-    opacity: 0;
-    transform: scale(1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  &__time {
+    transition: $transition;
+    &--danger {
+      color: red;
+      animation: impulse 1s infinite;
+      opacity: 0;
+      transform: scale(1);
+    }
   }
 }
 @keyframes impulse {
