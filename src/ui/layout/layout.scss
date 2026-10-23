@@ -1,3 +1,5 @@
+@use '../../styles/variables' as *;
+
 .game-main {
   min-height: 100vh;
   display: grid;
@@ -17,14 +19,14 @@
   isolation: isolate;
   margin: 0;
   padding: 8px clamp(28px, 5vw, 72px) 12px;
-  color: #3a2416;
+  color: $color-text-on-paper;
   font-size: clamp(22px, 3vw, 44px);
   font-weight: 900;
   letter-spacing: 0.045em;
   line-height: 1;
   text-align: center;
   text-shadow:
-    0 0 5px #d6ff7a,
+    0 0 5px $color-title-glow,
     0 0 18px rgb(114 204 37);
   text-transform: uppercase;
 }
@@ -37,7 +39,7 @@
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: $breakpoint-tablet) {
   .game-main {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -74,7 +76,7 @@
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: $breakpoint-mobile) {
   .game-main {
     grid-template-columns: minmax(0, 1fr);
   }

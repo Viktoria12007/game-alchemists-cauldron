@@ -1,13 +1,13 @@
 @use '../../styles/_variables' as *;
 
 .lives {
-  color: #ff6539;
+  color: $color-danger;
   font-size: 30px;
   padding: $btn-medium;
   overflow-wrap: anywhere;
-  text-shadow: 0 1px 2px rgb(0 0 0 / 80%);
-  background: linear-gradient(180deg, rgb(112 73 43 / 96%), rgb(62 38 25 / 98%));
-  border: 1px solid rgb(224 181 102 / 70%);
+  text-shadow: $shadow-text-dark;
+  background: $gradient-control;
+  border: 1px solid $color-control-border;
   border-radius: $corner-extra-small;
   text-align: center;
 }

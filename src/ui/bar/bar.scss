@@ -1,24 +1,26 @@
+@use '../../styles/variables' as *;
+
 .bar {
-  --bar-color: #ff6539;
+  --bar-color: #{$color-danger};
   --bar-dark: #4b150e;
   position: relative;
   min-width: 0;
   padding: 10px 14px 14px;
   color: #f7e5b5;
   background: linear-gradient(145deg, #7a5131, #4b3021);
-  border: 1px solid #d0a158;
+  border: 1px solid $color-panel-border;
   border-radius: 5px;
   box-shadow:
     inset 0 0 0 2px rgb(12 17 22 / 38%),
     0 3px 10px rgb(0 0 0 / 30%);
 
   &--density {
-    --bar-color: #36bdf4;
+    --bar-color: #{$color-density};
     --bar-dark: #062e50;
   }
 
   &--magic {
-    --bar-color: #b050f4;
+    --bar-color: #{$color-magic};
     --bar-dark: #321049;
   }
 
@@ -64,7 +66,7 @@
       repeating-linear-gradient(90deg, transparent 0 19px, rgb(255 255 255 / 17%) 20px 21px),
       linear-gradient(90deg, var(--bar-dark), var(--bar-color), var(--bar-dark));
     box-shadow:
-      inset 0 0 8px #000,
+      inset 0 0 8px $color-black,
       0 0 8px rgb(0 0 0 / 80%);
   }
 
@@ -84,7 +86,7 @@
     z-index: 3;
     top: -7px;
     bottom: -7px;
-    border: 2px solid #a9ff42;
+    border: 2px solid $color-stock;
     border-radius: 4px;
     background: rgb(139 255 50 / 16%);
     box-shadow:
@@ -115,7 +117,7 @@
     color: #d7ff9f;
     font-size: 11px;
     font-weight: 700;
-    text-shadow: 0 1px 3px #000;
+    text-shadow: 0 1px 3px $color-black;
     transform: translateX(-50%);
   }
 
@@ -133,7 +135,7 @@
 
   &__scale-label {
     position: absolute;
-    text-shadow: 0 1px 3px #000;
+    text-shadow: 0 1px 3px $color-black;
     transform: translateX(-50%);
 
     &::before {
@@ -149,15 +151,15 @@
 
     &--target {
       z-index: 1;
-      color: #b8ff63;
+        color: $color-accent-green;
       font-weight: 700;
       text-shadow:
         0 0 6px rgb(152 255 67 / 85%),
-        0 1px 3px #000;
+        0 1px 3px $color-black;
 
       &::before {
         height: 7px;
-        background: #b8ff63;
+        background: $color-accent-green;
         box-shadow: 0 0 4px #a5ff4d;
       }
     }

@@ -9,9 +9,9 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: 1%;
   padding: 12% 16% 25%;
-  color: #3a2416;
+  color: $color-text-on-paper;
   text-align: center;
-  text-shadow: 0 1px 0 rgb(255 232 174 / 70%);
+  text-shadow: $shadow-text-on-paper;
   background-image: url('../../assets/current-recipe.png');
   background-repeat: no-repeat;
   background-position: center;
@@ -31,7 +31,7 @@
   }
 
   &__title {
-    color: #5b301d;
+    color: $color-recipe-title;
     font-size: clamp(16px, 1.8vw, 28px);
   }
 
@@ -41,15 +41,15 @@
   }
 
   &__property--highlighted {
-    color: #b8ff63;
+    color: $color-accent-green;
     font-weight: 700;
     text-shadow:
       0 0 6px rgb(152 255 67 / 85%),
-      0 1px 3px #000;
+      0 1px 3px $color-black;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: $breakpoint-phone) {
   .current-recipe {
     column-gap: 6%;
     padding: 10% 14% 22%;

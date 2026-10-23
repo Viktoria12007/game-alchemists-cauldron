@@ -1,18 +1,20 @@
+@use '../../styles/variables' as *;
+
 .bars-panel {
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
-  padding: 14px 24px 20px;
-  background: linear-gradient(180deg, rgb(91 58 35 / 88%), rgb(54 33 23 / 94%));
-  border-top: 1px solid #d0a158;
-  box-shadow: 0 -8px 26px rgb(0 0 0 / 24%);
+  padding: 14px $space-6 $space-5;
+  background: $gradient-panel;
+  border-top: 1px solid $color-panel-border;
+  box-shadow: $shadow-panel;
 }
 
-@media (max-width: 800px) {
+@media (max-width: $breakpoint-compact) {
   .bars-panel {
     grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 12px;
+    gap: $space-3;
+    padding: $space-3;
   }
 }

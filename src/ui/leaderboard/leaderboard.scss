@@ -4,39 +4,39 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: $space-5;
   &__table {
-    color: #ffe8a5;
-    text-shadow: 0 1px 2px rgb(0 0 0 / 80%);
+    color: $color-text-on-dark;
+    text-shadow: $shadow-text-dark;
     border-collapse: collapse;
     text-align: center;
-    padding: 14px 24px 20px;
-    background: linear-gradient(180deg, rgb(91 58 35 / 88%), rgb(54 33 23 / 94%));
-    border: 1px solid #d0a158;
-    box-shadow: 0 -8px 26px rgb(0 0 0 / 24%);
+    padding: 14px $space-6 $space-5;
+    background: $gradient-panel;
+    border: 1px solid $color-panel-border;
+    box-shadow: $shadow-panel;
   }
   &__thead {
-    border-bottom: 1px solid #d0a158;
+    border-bottom: 1px solid $color-panel-border;
     & th {
-      padding: $size-3;
+      padding: $space-6;
     }
   }
   &__tbody {
     & td {
-      padding: $size-3;
+      padding: $space-6;
     }
   }
   &__actions {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: $space-5;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: $breakpoint-phone) {
   .leaderboard {
-    gap: 12px;
+    gap: $space-3;
 
     &__table {
       width: 100%;
@@ -45,7 +45,7 @@
 
     &__thead th,
     &__tbody td {
-      padding: 6px 4px;
+      padding: 6px $space-1;
       overflow-wrap: anywhere;
     }
 
