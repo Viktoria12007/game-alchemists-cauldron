@@ -15,6 +15,7 @@ export function createControlPanel() {
   brewButton.addEventListener('click', brew);
   brewButton.dataset.visible = `${state.startGame}`;
   brewButton.disabled = state.cauldronIngredients.length === 0;
-  add(controlPanel, leaderboardButton, startGameButton, brewButton);
+  const settingsButton = button('Settings', 'button control-panel__button');
+  add(controlPanel, leaderboardButton, startGameButton, brewButton, settingsButton);
   return controlPanel;
 }
