@@ -1,4 +1,4 @@
-import { add } from '../dom.ts';
+import { add, element } from '../dom.ts';
 import { createShelf } from '../shelf/shelf.ts';
 import { createCauldron } from '../cauldron/cauldron.ts';
 import { createControlPanel } from '../control-panel/control-panel.ts';
@@ -19,6 +19,7 @@ export function createLayout() {
     case 'playing': {
       main.replaceChildren(
         createLivesPanel(),
+        element('h1', 'game-title', 'Alchemist`s cauldron'),
         createShelf(),
         createCauldron(),
         createCurrentRecipe(),
