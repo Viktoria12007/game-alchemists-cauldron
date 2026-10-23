@@ -8,21 +8,20 @@ export function createIngredientCard(ingredient: IIngredient) {
   const card = element('div', 'ingredient-card');
   const icon = image(ingredient.icon, ingredient.name, 'ingredient-card__img');
   const wrap = element('div', 'ingredient-card__wrap');
-  const title = element('h2', 'ingredient-card__title', ingredient.name.toString());
+  const title = element('h2', 'ingredient-card__title', ingredient.name);
   const properties = element('div', 'ingredient-card__properties');
-  const temperature = element(
-    'div',
-    'ingredient-card__temperature',
-    ingredient.temperature.toString(),
-  );
-  const density = element('div', 'ingredient-card__density', ingredient.density.toString());
-  const power = element('div', 'ingredient-card__power', ingredient.magicPower.toString());
-  const stock = element(
-    'div',
-    'ingredient-card__stock',
-    state.shelfStock[ingredient.id]?.toString(),
-  );
-  add(properties, temperature, density, power, stock);
+  const temperature = element('div', 'ingredient-card__temperature', `T${ingredient.temperature}`);
+  const density = element('div', 'ingredient-card__density', `D${ingredient.density}`);
+  const power = element('div', 'ingredient-card__power', `MP${ingredient.magicPower}`);
+  add(properties, temperature, density, power);
+  if (Object.hasOwn(state.shelfStock, ingredient.id)) {
+    const stock = element(
+      'div',
+      'ingredient-card__stock',
+      state.shelfStock[ingredient.id]?.toString(),
+    );
+    add(properties, stock);
+  }
   const addButton = button('', 'ingredient-card__button');
   addButton.addEventListener('click', () => addIngredient(ingredient.id));
   addButton.disabled =
