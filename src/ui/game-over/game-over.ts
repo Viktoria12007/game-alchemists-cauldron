@@ -25,11 +25,19 @@ export function createGameOver() {
     input.required = true;
     input.pattern = String.raw`[a-zA-Z0-9 _\-]{2,15}`;
     input.title = 'Accept names with 2–15 characters: letters, digits, space, _ and -';
+    input.addEventListener('input', () => {
+      input.setCustomValidity(input.value.trim() ? '' : 'Name cannot contain only spaces.');
+    });
     const mainButton = button('Submit score', 'button game-over__button');
     mainButton.type = 'submit';
     form.addEventListener('submit', (event) => {
+      const playerName = input.value.trim();
+      input.setCustomValidity(playerName ? '' : 'Name cannot contain only spaces.');
       if (input.checkValidity()) {
-        submitScore(event, input.value.trim());
+        submitScore(event, playerName);
+      } else {
+        event.preventDefault();
+        input.reportValidity();
       }
     });
     add(form, label, input, mainButton);
