@@ -1,16 +1,51 @@
+@use '../../styles/_variables' as *;
+
 .ingredient-card {
   position: relative;
+  width: 100%;
+  max-width: 260px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 4px 8px;
+  background: linear-gradient(90deg, transparent, rgb(20 10 4 / 46%), transparent);
+  text-align: center;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 85%);
+
   &__img {
     width: 60px;
     height: 60px;
+    flex: 0 0 auto;
+    object-fit: contain;
+  }
+  &__wrap {
+    min-width: 0;
+  }
+  &__title {
+    font-size: clamp(12px, 1.1vw, 16px);
   }
   &__properties {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 10px;
+    font-size: clamp(10px, 0.9vw, 14px);
+  }
+  &__temperature {
+    color: #ff6539;
+  }
+  &__density {
+    color: #36bdf4;
+  }
+  &__power {
+    color: #b050f4;
+  }
+  &__stock {
+    color: #a9ff42;
+    font-weight: $bold;
+    border-radius: $corner-full;
+    padding: 1px 5px;
+    border: 1px solid #a9ff42;
   }
   &__button {
     position: absolute;

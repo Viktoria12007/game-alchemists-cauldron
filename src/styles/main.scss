@@ -16,6 +16,7 @@
 @use '../ui/game-over/game-over';
 @use '../ui/pause/pause';
 @use '../ui/leaderboard/leaderboard';
+@use '../ui/score/score';
 
 * {
   box-sizing: border-box;
@@ -42,6 +43,86 @@ input {
 button,
 a {
   -webkit-tap-highlight-color: transparent;
+}
+
+.button {
+  display: inline-grid;
+  place-items: center;
+  padding: $btn-large;
+  overflow: hidden;
+  color: #ffe8a5;
+  font-weight: $bold;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 80%);
+  background: linear-gradient(180deg, rgb(112 73 43 / 96%), rgb(62 38 25 / 98%));
+  border: 1px solid rgb(224 181 102 / 70%);
+  border-radius: $corner-extra-small;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover:not(:disabled) {
+    filter: brightness(1.14);
+    transform: translateY(-2px);
+    border-color: #ffe0a0;
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(2px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #c6ff5d;
+    outline-offset: 3px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.main-button {
+  position: relative;
+  isolation: isolate;
+  display: inline-grid;
+  place-items: center;
+  min-inline-size: 280px;
+  min-block-size: 76px;
+  max-inline-size: 100%;
+  padding: 20px 64px;
+  overflow: hidden;
+  color: #ffe8a5;
+  font-size: clamp(18px, 2vw, 34px);
+  font-weight: $extra-bold;
+  letter-spacing: 0.09em;
+  text-align: center;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 80%);
+  text-transform: uppercase;
+  border: 0;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  clip-path: polygon(9% 0, 91% 0, 100% 50%, 91% 100%, 9% 100%, 0 50%);
+  background: linear-gradient(180deg, rgb(112 73 43 / 96%), rgb(62 38 25 / 98%));
+  transition: $transition;
+
+  &:hover:not(:disabled) {
+    filter: brightness(1.2) saturate(1.15);
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(1px) scale(0.99);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #d4ff77;
+    outline-offset: 4px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
 
 a {
