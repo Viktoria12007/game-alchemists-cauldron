@@ -48,3 +48,26 @@
       0 1px 3px #000;
   }
 }
+
+@media (max-width: 480px) {
+  .current-recipe {
+    column-gap: 6%;
+    padding: 10% 14% 22%;
+
+    &__page {
+      gap: 3px;
+    }
+
+    &__sub-title {
+      font-size: 10px;
+    }
+
+    &__title {
+      font-size: 13px;
+    }
+
+    &__property {
+      font-size: 9px;
+    }
+  }
+}

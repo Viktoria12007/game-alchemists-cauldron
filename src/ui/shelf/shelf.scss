@@ -17,3 +17,10 @@
     justify-content: center;
   }
 }
+
+@media (max-width: 700px) {
+  .ingredients-list {
+    width: min(100%, 400px);
+    padding: 14% 19% 10%;
+  }
+}

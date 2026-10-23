@@ -42,3 +42,23 @@
     text-shadow: 0 1px 0 rgb(255 232 174 / 70%);
   }
 }
+
+@media (max-width: 480px) {
+  .modal-window {
+    padding: 12px;
+
+    &__dialog {
+      width: min(640px, calc(100vw - 24px), calc((100vh - 24px) * 1.5));
+      padding: 6% 5%;
+    }
+
+    &__header {
+      gap: 8px;
+      padding: 8px 12px;
+    }
+
+    &__title {
+      font-size: 18px;
+    }
+  }
+}

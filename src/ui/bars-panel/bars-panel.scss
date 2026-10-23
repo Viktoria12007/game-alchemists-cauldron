@@ -12,5 +12,7 @@
 @media (max-width: 800px) {
   .bars-panel {
     grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px;
   }
 }
