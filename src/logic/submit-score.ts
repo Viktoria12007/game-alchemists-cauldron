@@ -9,6 +9,7 @@ export function submitScore(event: SubmitEvent, name: string) {
     name: name,
     score: state.score,
     date: Date.now(),
+    difficulty: state.difficulty,
   };
   addLeader(player);
   state.score = 0;
