@@ -9,6 +9,7 @@ export function createControlPanel() {
   const controlPanel = element('div', 'control-panel');
   const leaderboardButton = button('Leaderboard', 'button control-panel__button');
   leaderboardButton.addEventListener('click', renderLeaderboard);
+  leaderboardButton.disabled = state.startGame;
   const startGameButton = button('Start game', 'main-button');
   startGameButton.addEventListener('click', startGame);
   startGameButton.dataset.visible = `${!state.startGame}`;
