@@ -13,6 +13,7 @@ const state: IGameState = {
   startGame: false,
   closeModalWindow: () => {},
   reasonGameOver: '',
+  difficulty: 'medium',
 };
 
 export default state;
