@@ -11,6 +11,7 @@ import { createGameOver } from '../game-over/game-over.ts';
 import { createPause } from '../pause/pause.ts';
 import { createLeaderboard } from '../leaderboard/leaderboard.ts';
 import { createSettings } from '../settings/settings.ts';
+import {createHelp} from "../help/help.ts";
 
 export function createLayout() {
   const main = document.querySelector('.game-main');
@@ -54,6 +55,12 @@ export function createLayout() {
       add(main, modalWindow.element);
       break;
     }
+      case 'help': {
+          const modalWindow = openModalWindow({ content: createHelp() });
+          state.closeModalWindow = modalWindow.close;
+          add(main, modalWindow.element);
+          break;
+      }
     default: {
       return main;
     }
