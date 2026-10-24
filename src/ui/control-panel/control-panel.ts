@@ -4,7 +4,7 @@ import { brew } from '../../logic/brew.ts';
 import state from '../../state/game-state.ts';
 import { renderLeaderboard } from '../../logic/render/render-leaderboard.ts';
 import { renderSettings } from '../../logic/render/render-settings.ts';
-import {renderHelp} from "../../logic/render/render-help.ts";
+import { renderHelp } from '../../logic/render/render-help.ts';
 
 export function createControlPanel() {
   const controlPanel = element('div', 'control-panel');
