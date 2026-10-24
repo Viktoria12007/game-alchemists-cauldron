@@ -16,6 +16,7 @@ export const recipePool: IRecipe[] = [
       min: 17,
       max: 27,
     },
+    difficulty: 'easy',
   },
   {
     id: 'root-bloom',
@@ -32,6 +33,7 @@ export const recipePool: IRecipe[] = [
       min: 15,
       max: 25,
     },
+    difficulty: 'easy',
   },
   {
     id: 'frost-steam',
@@ -48,6 +50,7 @@ export const recipePool: IRecipe[] = [
       min: 19,
       max: 29,
     },
+    difficulty: 'easy',
   },
   {
     id: 'quiet-swirl',
@@ -64,6 +67,7 @@ export const recipePool: IRecipe[] = [
       min: 17,
       max: 27,
     },
+    difficulty: 'easy',
   },
   {
     id: 'bright-dew',
@@ -80,6 +84,7 @@ export const recipePool: IRecipe[] = [
       min: 25,
       max: 35,
     },
+    difficulty: 'easy',
   },
   {
     id: 'snow-dust',
@@ -96,6 +101,7 @@ export const recipePool: IRecipe[] = [
       min: 29,
       max: 39,
     },
+    difficulty: 'easy',
   },
   {
     id: 'acid-spark',
@@ -112,6 +118,7 @@ export const recipePool: IRecipe[] = [
       min: 29,
       max: 39,
     },
+    difficulty: 'medium',
   },
   {
     id: 'void-ember',
@@ -128,6 +135,7 @@ export const recipePool: IRecipe[] = [
       min: 45,
       max: 55,
     },
+    difficulty: 'medium',
   },
   {
     id: 'heavy-acid',
@@ -144,6 +152,7 @@ export const recipePool: IRecipe[] = [
       min: 25,
       max: 35,
     },
+    difficulty: 'medium',
   },
   {
     id: 'frost-acid',
@@ -160,6 +169,7 @@ export const recipePool: IRecipe[] = [
       min: 31,
       max: 41,
     },
+    difficulty: 'medium',
   },
   {
     id: 'dusty-void',
@@ -176,6 +186,7 @@ export const recipePool: IRecipe[] = [
       min: 47,
       max: 57,
     },
+    difficulty: 'medium',
   },
   {
     id: 'dragon-void',
@@ -192,6 +203,7 @@ export const recipePool: IRecipe[] = [
       min: 55,
       max: 65,
     },
+    difficulty: 'medium',
   },
   {
     id: 'rooted-night',
@@ -208,6 +220,7 @@ export const recipePool: IRecipe[] = [
       min: 55,
       max: 65,
     },
+    difficulty: 'medium',
   },
   {
     id: 'phoenix-pulse',
@@ -224,6 +237,7 @@ export const recipePool: IRecipe[] = [
       min: 37,
       max: 47,
     },
+    difficulty: 'hard',
   },
   {
     id: 'slime-crown',
@@ -240,6 +254,7 @@ export const recipePool: IRecipe[] = [
       min: 3,
       max: 13,
     },
+    difficulty: 'hard',
   },
   {
     id: 'void-flame',
@@ -256,6 +271,7 @@ export const recipePool: IRecipe[] = [
       min: 60,
       max: 70,
     },
+    difficulty: 'hard',
   },
   {
     id: 'acid-bog',
@@ -272,6 +288,7 @@ export const recipePool: IRecipe[] = [
       min: 17,
       max: 27,
     },
+    difficulty: 'hard',
   },
   {
     id: 'frozen-ash',
@@ -288,6 +305,7 @@ export const recipePool: IRecipe[] = [
       min: 39,
       max: 49,
     },
+    difficulty: 'hard',
   },
   {
     id: 'triple-eclipse',
@@ -304,6 +322,7 @@ export const recipePool: IRecipe[] = [
       min: 60,
       max: 70,
     },
+    difficulty: 'hard',
   },
   {
     id: 'ember-soup',
@@ -320,5 +339,6 @@ export const recipePool: IRecipe[] = [
       min: 37,
       max: 47,
     },
+    difficulty: 'hard',
   },
 ];
