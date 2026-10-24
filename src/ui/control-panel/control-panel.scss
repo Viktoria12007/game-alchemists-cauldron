@@ -8,16 +8,6 @@
   justify-content: space-between;
 }
 
-.main-button {
-  text-transform: capitalize;
-  &[data-visible='true'] {
-    display: inline-block;
-  }
-  &[data-visible='false'] {
-    display: none;
-  }
-}
-
 @media (max-width: $breakpoint-mobile) {
   .control-panel {
     display: grid;

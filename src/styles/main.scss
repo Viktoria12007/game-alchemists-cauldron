@@ -124,6 +124,14 @@ a {
   &:disabled {
     cursor: not-allowed;
   }
+
+  &[data-visible='true'] {
+    display: inline-block;
+  }
+
+  &[data-visible='false'] {
+    display: none;
+  }
 }
 
 a {
