@@ -8,9 +8,8 @@
   align-items: center;
   justify-content: center;
   padding: $space-1 $space-2;
-  background: linear-gradient(90deg, transparent, rgb(20 10 4 / 46%), transparent);
   text-align: center;
-  text-shadow: 0 1px 2px rgb(0 0 0 / 85%);
+  text-shadow: $shadow-text-dark;
 
   &__img {
     width: 60px;
@@ -22,14 +21,14 @@
     min-width: 0;
   }
   &__title {
-    font-size: clamp(12px, 1.1vw, 16px);
+    font-size: $font-property;
   }
   &__properties {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
-    font-size: clamp(10px, 0.9vw, 14px);
+    gap: $space-3;
+    font-size: $font-small;
   }
   &__temperature {
     color: $color-danger;
@@ -44,7 +43,7 @@
     color: $color-stock;
     font-weight: $bold;
     border-radius: $corner-full;
-    padding: 1px 5px;
+    padding: $stock-padding;
     border: 1px solid $color-stock;
   }
   &__button {
@@ -61,10 +60,10 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: $breakpoint-phone) {
   .ingredient-card {
     max-width: 230px;
-    padding: 3px 6px;
+    padding: $card-padding;
 
     &__img {
       width: 48px;
@@ -72,12 +71,12 @@
     }
 
     &__title {
-      font-size: 11px;
+      font-size: $label-medium;
     }
 
     &__properties {
-      gap: 2px;
-      font-size: 9px;
+      gap: $space-0;
+      font-size: $label-small;
     }
   }
 }

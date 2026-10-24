@@ -7,8 +7,8 @@
   aspect-ratio: 3 / 2;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 1%;
-  padding: 12% 16% 25%;
+  column-gap: $current-recipe-space;
+  padding: $current-recipe-padding;
   color: $color-text-on-paper;
   text-align: center;
   text-shadow: $shadow-text-on-paper;
@@ -23,51 +23,49 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    gap: clamp(4px, 0.8vw, 12px);
+    gap: $page-space;
   }
 
   &__sub-title {
-    font-size: clamp(12px, 1.2vw, 18px);
+    font-size: $font-subtitle;
   }
 
   &__title {
     color: $color-recipe-title;
-    font-size: clamp(16px, 1.8vw, 28px);
+    font-size: $font-title;
   }
 
   &__property {
-    font-size: clamp(11px, 1.1vw, 16px);
+    font-size: $font-property;
     font-weight: $bold;
   }
 
   &__property--highlighted {
     color: $color-accent-green;
-    font-weight: 700;
-    text-shadow:
-      0 0 6px rgb(152 255 67 / 85%),
-      0 1px 3px $color-black;
+    font-weight: $bold;
+    text-shadow: $shadow-text-green;
   }
 }
 
 @media (max-width: $breakpoint-phone) {
   .current-recipe {
-    column-gap: 6%;
-    padding: 10% 14% 22%;
+    column-gap: $current-recipe-phone-space;
+    padding: $current-recipe-phone-padding;
 
     &__page {
-      gap: 3px;
+      gap: $space-3;
     }
 
     &__sub-title {
-      font-size: 10px;
+      font-size: $label-small;
     }
 
     &__title {
-      font-size: 13px;
+      font-size: $body-small;
     }
 
     &__property {
-      font-size: 9px;
+      font-size: $label-small;
     }
   }
 }

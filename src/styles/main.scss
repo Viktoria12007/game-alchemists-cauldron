@@ -52,7 +52,7 @@ a {
   overflow: hidden;
   color: $color-text-on-dark;
   font-weight: $bold;
-  letter-spacing: 0.09em;
+  letter-spacing: $letter-space-large;
   text-transform: uppercase;
   overflow-wrap: anywhere;
   text-shadow: $shadow-text-dark;
@@ -73,8 +73,8 @@ a {
   }
 
   &:focus-visible {
-    outline: 2px solid #c6ff5d;
-    outline-offset: 3px;
+    outline: $outline;
+    outline-offset: $outline-offset;
   }
 
   &:disabled {
@@ -90,19 +90,19 @@ a {
   min-inline-size: 280px;
   min-block-size: 76px;
   max-inline-size: 100%;
-  padding: 20px 64px;
+  padding: $btn-huge;
   overflow: hidden;
   color: $color-text-on-dark;
-  font-size: clamp(18px, 2vw, 34px);
+  font-size: $font-huge;
   font-weight: $extra-bold;
-  letter-spacing: 0.09em;
+  letter-spacing: $letter-space-large;
   text-align: center;
   text-shadow: $shadow-text-dark;
   text-transform: uppercase;
   border: 0;
   overflow-wrap: anywhere;
   cursor: pointer;
-  clip-path: polygon(9% 0, 91% 0, 100% 50%, 91% 100%, 9% 100%, 0 50%);
+  clip-path: $polygon;
   background: $gradient-control;
   transition: $transition;
 
@@ -116,8 +116,8 @@ a {
   }
 
   &:focus-visible {
-    outline: 2px solid #d4ff77;
-    outline-offset: 4px;
+    outline: $outline;
+    outline-offset: $outline-offset;
   }
 
   &:disabled {

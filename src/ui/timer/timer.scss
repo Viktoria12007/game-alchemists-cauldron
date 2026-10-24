@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: $space-3;
   &__time {
     width: 135px;
     padding: $space-2 $space-5;
@@ -15,7 +15,7 @@
     text-transform: uppercase;
     white-space: nowrap;
     font-variant-numeric: tabular-nums;
-    clip-path: polygon(9% 0, 91% 0, 100% 50%, 91% 100%, 9% 100%, 0 50%);
+    clip-path: $polygon;
     background: $gradient-control;
     transition: $transition;
     &--danger {

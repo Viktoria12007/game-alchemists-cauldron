@@ -25,9 +25,8 @@
     width: 100%;
     padding: $btn-medium;
     margin: $space-5 0;
-
     background: $color-white;
-    border: 1px solid $color-control-border;
+    border: $main-border;
     border-radius: $corner-extra-small;
     &:invalid {
       color: $color-danger;

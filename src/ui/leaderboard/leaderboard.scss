@@ -10,13 +10,13 @@
     text-shadow: $shadow-text-dark;
     border-collapse: collapse;
     text-align: center;
-    padding: 14px $space-6 $space-5;
+    padding: $body-small $space-6 $space-5;
     background: $gradient-panel;
-    border: 1px solid $color-panel-border;
+    border: $main-border;
     box-shadow: $shadow-panel;
   }
   &__thead {
-    border-bottom: 1px solid $color-panel-border;
+    border-bottom: $main-border;
     & th {
       padding: $space-6;
     }
@@ -40,17 +40,17 @@
 
     &__table {
       width: 100%;
-      font-size: 10px;
+      font-size: $label-medium;
     }
 
     &__thead th,
     &__tbody td {
-      padding: 6px $space-1;
+      padding: $space-1;
       overflow-wrap: anywhere;
     }
 
     &__actions {
-      gap: 10px;
+      gap: $space-3;
     }
   }
 }

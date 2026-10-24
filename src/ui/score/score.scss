@@ -5,12 +5,12 @@
   overflow: hidden;
   color: $color-text-on-dark;
   font-weight: $bold;
-  letter-spacing: 0.09em;
+  letter-spacing: $letter-space-large;
   text-transform: uppercase;
   overflow-wrap: anywhere;
   text-shadow: $shadow-text-dark;
   background: $gradient-control;
-  border: 1px solid $color-control-border;
+  border: $main-border;
   border-radius: $corner-extra-small;
   text-align: center;
 }
