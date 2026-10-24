@@ -10,6 +10,7 @@ import state from '../../state/game-state.ts';
 import { createGameOver } from '../game-over/game-over.ts';
 import { createPause } from '../pause/pause.ts';
 import { createLeaderboard } from '../leaderboard/leaderboard.ts';
+import { createSettings } from '../settings/settings.ts';
 
 export function createLayout() {
   const main = document.querySelector('.game-main');
@@ -43,6 +44,12 @@ export function createLayout() {
     case 'leaderboard': {
       state.closeModalWindow();
       const modalWindow = openModalWindow({ content: createLeaderboard() });
+      state.closeModalWindow = modalWindow.close;
+      add(main, modalWindow.element);
+      break;
+    }
+    case 'menu': {
+      const modalWindow = openModalWindow({ content: createSettings() });
       state.closeModalWindow = modalWindow.close;
       add(main, modalWindow.element);
       break;
