@@ -1,8 +1,8 @@
 import { add, button, element } from '../dom.ts';
 import { getStorage } from '../../storage/get-storage.ts';
 import { formatDate } from '../../logic/format-date.ts';
-import { resume } from '../../logic/resume.ts';
 import { renderConfirm } from '../../logic/render/render-confirm.ts';
+import { playAgain } from '../../logic/play-again.ts';
 
 export function createLeaderboard() {
   const elementLeaderboard = element('div', 'leaderboard');
@@ -39,7 +39,7 @@ export function createLeaderboard() {
   const clearButton = button('Clear leaderboard', 'button leaderboard__button');
   clearButton.addEventListener('click', renderConfirm);
   const backButton = button('Back', 'button leaderboard__button');
-  backButton.addEventListener('click', resume);
+  backButton.addEventListener('click', playAgain);
   add(actions, clearButton, backButton);
   add(elementLeaderboard, title, elementShowed, actions);
   return elementLeaderboard;
