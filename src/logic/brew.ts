@@ -4,24 +4,32 @@ import { calculateCauldron } from './calculate-cauldron.ts';
 import { settings } from '../data/settings.ts';
 import { createLayout } from '../ui/layout/layout.ts';
 import { gameOver } from './game-over.ts';
+import { getRecipesByDifficulty } from './get-recipes-by-difficulty.ts';
 
 export function brew() {
   const values = calculateCauldron(state.cauldronIngredients);
   const isSuccess =
-    values.temperature >= state.activeRecipe.temperature.min - settings.tolerance &&
-    values.temperature <= state.activeRecipe.temperature.max + settings.tolerance &&
-    values.density >= state.activeRecipe.density.min - settings.tolerance &&
-    values.density <= state.activeRecipe.density.max + settings.tolerance &&
-    values.magicPower >= state.activeRecipe.magicPower.min - settings.tolerance &&
-    values.magicPower <= state.activeRecipe.magicPower.max + settings.tolerance;
+    values.temperature >=
+      state.activeRecipe.temperature.min - settings[state.difficulty].recipeTolerance &&
+    values.temperature <=
+      state.activeRecipe.temperature.max + settings[state.difficulty].recipeTolerance &&
+    values.density >= state.activeRecipe.density.min - settings[state.difficulty].recipeTolerance &&
+    values.density <= state.activeRecipe.density.max + settings[state.difficulty].recipeTolerance &&
+    values.magicPower >=
+      state.activeRecipe.magicPower.min - settings[state.difficulty].recipeTolerance &&
+    values.magicPower <=
+      state.activeRecipe.magicPower.max + settings[state.difficulty].recipeTolerance;
   if (isSuccess) {
-    state.score += 200;
-    if (state.timeLeft + 10 > settings.maxSecondsTimer) {
-      state.timeLeft = settings.maxSecondsTimer;
+    state.score += settings[state.difficulty].scorePerBrew;
+    if (
+      state.timeLeft + settings[state.difficulty].timeBonusPerBrew >
+      settings[state.difficulty].startingTime
+    ) {
+      state.timeLeft = settings[state.difficulty].startingTime;
     } else {
-      state.timeLeft += 10;
+      state.timeLeft += settings[state.difficulty].timeBonusPerBrew;
     }
-    state.activeRecipe = recipeGenerator();
+    state.activeRecipe = recipeGenerator(getRecipesByDifficulty(state.difficulty));
   } else {
     state.lives -= 1;
     if (state.lives === 0) {
