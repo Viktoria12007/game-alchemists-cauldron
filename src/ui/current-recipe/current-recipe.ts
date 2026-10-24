@@ -3,7 +3,8 @@ import state from '../../state/game-state.ts';
 import { settings } from '../../data/settings.ts';
 
 export function createCurrentRecipe() {
-  const isFulled = state.cauldronIngredients.length === settings.maxCauldronIngredients;
+  const isFulled =
+    state.cauldronIngredients.length === settings[state.difficulty].maxIngredientsInCauldron;
   const recipe = element('div', 'current-recipe');
   const leftPage = element('div', 'current-recipe__page current-recipe__page--left');
   const rightPage = element('div', 'current-recipe__page current-recipe__page--right');
@@ -27,7 +28,7 @@ export function createCurrentRecipe() {
   const ingredients = element(
     'div',
     `current-recipe__property ${isFulled && 'current-recipe__property--highlighted'}`,
-    `Ingredients: ${state.cauldronIngredients.length}/${settings.maxCauldronIngredients}`,
+    `Ingredients: ${state.cauldronIngredients.length}/${settings[state.difficulty].maxIngredientsInCauldron}`,
   );
   add(leftPage, subtitle, title, ingredients);
   add(rightPage, temperature, density, magic);
