@@ -30,23 +30,36 @@ $main-border: 1px solid $color-panel-border;
 $gradient-control: linear-gradient(180deg, rgb(112 73 43 / 96%), rgb(62 38 25 / 98%));
 $gradient-panel: linear-gradient(180deg, rgb(91 58 35 / 88%), rgb(54 33 23 / 94%));
 $gradient-bar: linear-gradient(145deg, #7a5131, #4b3021);
-$gradient-track: repeating-linear-gradient(90deg, transparent 0 19px, rgb(255 255 255 / 17%) 20px 21px),
-linear-gradient(90deg, var(--bar-dark), var(--bar-color), var(--bar-dark));
+$gradient-track:
+  repeating-linear-gradient(90deg, transparent 0 19px, rgb(255 255 255 / 17%) 20px 21px),
+  linear-gradient(90deg, var(--bar-dark), var(--bar-color), var(--bar-dark));
 
-$shadow-text-green: 0 0 6px rgb(152 255 67 / 85%), 0 1px 3px $color-black;
+$shadow-text-green:
+  0 0 6px rgb(152 255 67 / 85%),
+  0 1px 3px $color-black;
 $shadow-text-dark: 0 1px 3px rgb(0 0 0 / 80%);
 $shadow-text-on-paper: 0 1px 0 rgb(255 232 174 / 70%);
-$shadow-text-main-title: 0 0 5px $color-title-glow, 0 0 18px rgb(114 204 37);
+$shadow-text-main-title:
+  0 0 5px $color-title-glow,
+  0 0 18px rgb(114 204 37);
 
 $shadow-panel: 0 -8px 26px rgb(0 0 0 / 24%);
-$shadow-bar: inset 0 0 0 2px rgb(12 17 22 / 38%), 0 3px 10px rgb(0 0 0 / 30%);
-$shadow-track: inset 0 0 8px $color-black, 0 0 8px rgb(0 0 0 / 80%);
+$shadow-bar:
+  inset 0 0 0 2px rgb(12 17 22 / 38%),
+  0 3px 10px rgb(0 0 0 / 30%);
+$shadow-track:
+  inset 0 0 8px $color-black,
+  0 0 8px rgb(0 0 0 / 80%);
 $shadow-zero-line: 0 0 4px #fff0a0;
-$shadow-target:  0 0 9px rgb(150 255 44 / 85%), inset 0 0 7px rgb(150 255 44 / 45%);
+$shadow-target:
+  0 0 9px rgb(150 255 44 / 85%),
+  inset 0 0 7px rgb(150 255 44 / 45%);
 $shadow-target-before: 0 0 4px #a5ff4d;
 $shadow-marker: 0 0 7px #050505;
-$shadow-success: inset 0 0 0 2px rgb(133 255 57 / 28%), inset 0 0 23px rgb(119 255 31 / 15%),
-0 0 17px rgb(119 255 31 / 45%);
+$shadow-success:
+  inset 0 0 0 2px rgb(133 255 57 / 28%),
+  inset 0 0 23px rgb(119 255 31 / 15%),
+  0 0 17px rgb(119 255 31 / 45%);
 $shadow-bar-marker: 0 0 16px #9cff39;
 
 $content-width: 1920px;
@@ -118,7 +131,10 @@ $outline: 2px solid #c6ff5d;
 $outline-offset: 3px;
 
 $transition: all 0.3s ease;
-$transition-marker: left 550ms cubic-bezier(0.22, 1, 0.36, 1), background 250ms ease, box-shadow 250ms ease;
+$transition-marker:
+  left 550ms cubic-bezier(0.22, 1, 0.36, 1),
+  background 250ms ease,
+  box-shadow 250ms ease;
 
 $icon-filter: drop-shadow(0 0 5px color-mix(in srgb, var(--bar-color), transparent 35%));
 $modal-filter: blur(4px);
