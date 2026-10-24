@@ -1,6 +1,6 @@
 type Difficulty = 'easy' | 'medium' | 'hard';
 
-type GameStatus = 'menu' | 'playing' | 'paused' | 'game-over' | 'leaderboard';
+type GameStatus = 'menu' | 'playing' | 'paused' | 'game-over' | 'leaderboard' | 'help';
 
 interface IIngredient {
   id: string;
