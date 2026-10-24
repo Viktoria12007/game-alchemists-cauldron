@@ -1,16 +1,50 @@
+@use '../../styles/_variables' as *;
+
 .ingredient-card {
   position: relative;
+  width: 100%;
+  max-width: 260px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: $space-1 $space-2;
+  text-align: center;
+  text-shadow: $shadow-text-dark;
+
   &__img {
     width: 60px;
     height: 60px;
+    flex: 0 0 auto;
+    object-fit: contain;
+  }
+  &__wrap {
+    min-width: 0;
+  }
+  &__title {
+    font-size: $font-property;
   }
   &__properties {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: $space-3;
+    font-size: $font-small;
+  }
+  &__temperature {
+    color: $color-danger;
+  }
+  &__density {
+    color: $color-density;
+  }
+  &__power {
+    color: $color-magic;
+  }
+  &__stock {
+    color: $color-stock;
+    font-weight: $bold;
+    border-radius: $corner-full;
+    padding: $stock-padding;
+    border: 1px solid $color-stock;
   }
   &__button {
     position: absolute;
@@ -22,6 +56,27 @@
     cursor: pointer;
     &:disabled {
       cursor: not-allowed;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-phone) {
+  .ingredient-card {
+    max-width: 230px;
+    padding: $card-padding;
+
+    &__img {
+      width: 48px;
+      height: 48px;
+    }
+
+    &__title {
+      font-size: $label-medium;
+    }
+
+    &__properties {
+      gap: $space-0;
+      font-size: $label-small;
     }
   }
 }

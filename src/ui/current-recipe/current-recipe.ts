@@ -5,6 +5,8 @@ import { settings } from '../../data/settings.ts';
 export function createCurrentRecipe() {
   const isFulled = state.cauldronIngredients.length === settings.maxCauldronIngredients;
   const recipe = element('div', 'current-recipe');
+  const leftPage = element('div', 'current-recipe__page current-recipe__page--left');
+  const rightPage = element('div', 'current-recipe__page current-recipe__page--right');
   const subtitle = element('h3', 'current-recipe__sub-title', 'Current recipe');
   const title = element('h2', 'current-recipe__title', state.activeRecipe?.name);
   const temperature = element(
@@ -27,6 +29,8 @@ export function createCurrentRecipe() {
     `current-recipe__property ${isFulled && 'current-recipe__property--highlighted'}`,
     `Ingredients: ${state.cauldronIngredients.length}/${settings.maxCauldronIngredients}`,
   );
-  add(recipe, subtitle, title, temperature, density, magic, ingredients);
+  add(leftPage, subtitle, title, ingredients);
+  add(rightPage, temperature, density, magic);
+  add(recipe, leftPage, rightPage);
   return recipe;
 }

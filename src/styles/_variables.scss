@@ -1,86 +1,142 @@
-$white: #ffffff;
-$black: #000000;
-$bg: #f9f8f3;
-$on-bg: #5f5d75;
-$on-bg-low: #737380;
-$bg-footer: #1e1b3a;
-$bg-footer-low: #2a264f;
-$bg-footer-lowest: #3c376e;
-$on-bg-footer: #b9b5c9;
-$surface: #fff9e5;
-$surface-low: #fffcf5;
-$primary: #ffd02b;
-$primary-low: #fde047;
-$primary-high: #e5bb00;
-$on-primary: #242145;
-$secondary: #f0eeff;
-$tertiary: #3a2ebf;
-$like: #ff4b4b;
-$error: #b3261e;
-$price-free: #0b8a8f;
-$outline: #e5e7eb;
-$outline-variant: #d2d2d2;
-$avatar-random-1: #e9eef6;
-$avatar-random-2: #a3e2c9;
-$avatar-random-3: #bce3ff;
-$avatar-random-4: #ffc6ff;
-$avatar-random-5: #e8dff5;
-$text-placeholder: #969696;
-$transparent: transparent;
+$color-page-background: #f9f8f3;
+$color-white: #fff;
+$color-black: #000;
+$color-text-on-dark: #ffe8a5;
+$color-text-on-paper: #3a2416;
+$color-recipe-title: #5b301d;
+$color-danger: #ff6539;
+$color-density: #36bdf4;
+$color-magic: #b050f4;
+$color-dark-danger: #4b150e;
+$color-dark-density: #062e50;
+$color-dark-magic: #321049;
+$color-accent-green: #b8ff63;
+$color-stock: #a9ff42;
+$color-title-glow: #d6ff7a;
+$color-control-border: rgb(224 181 102 / 70%);
+$color-panel-border: #d0a158;
+$color-track-border: #8b6b36;
+$color-zero-line: rgb(255 244 201 / 80%);
+$color-target: rgb(139 255 50 / 16%);
+$color-marker: #725b2e;
+$color-range: #d7ff9f;
+$color-scale: #e8d6aa;
+$color-scale-before: #d3b776;
+$color-bar-marker: #baff53;
+$color-background-modal-window: rgb(20 12 7 / 58%);
+
+$main-border: 1px solid $color-panel-border;
+
+$gradient-control: linear-gradient(180deg, rgb(112 73 43 / 96%), rgb(62 38 25 / 98%));
+$gradient-panel: linear-gradient(180deg, rgb(91 58 35 / 88%), rgb(54 33 23 / 94%));
+$gradient-bar: linear-gradient(145deg, #7a5131, #4b3021);
+$gradient-track:
+  repeating-linear-gradient(90deg, transparent 0 19px, rgb(255 255 255 / 17%) 20px 21px),
+  linear-gradient(90deg, var(--bar-dark), var(--bar-color), var(--bar-dark));
+
+$shadow-text-green:
+  0 0 6px rgb(152 255 67 / 85%),
+  0 1px 3px $color-black;
+$shadow-text-dark: 0 1px 3px rgb(0 0 0 / 80%);
+$shadow-text-on-paper: 0 1px 0 rgb(255 232 174 / 70%);
+$shadow-text-main-title:
+  0 0 5px $color-title-glow,
+  0 0 18px rgb(114 204 37);
+
+$shadow-panel: 0 -8px 26px rgb(0 0 0 / 24%);
+$shadow-bar:
+  inset 0 0 0 2px rgb(12 17 22 / 38%),
+  0 3px 10px rgb(0 0 0 / 30%);
+$shadow-track:
+  inset 0 0 8px $color-black,
+  0 0 8px rgb(0 0 0 / 80%);
+$shadow-zero-line: 0 0 4px #fff0a0;
+$shadow-target:
+  0 0 9px rgb(150 255 44 / 85%),
+  inset 0 0 7px rgb(150 255 44 / 45%);
+$shadow-target-before: 0 0 4px #a5ff4d;
+$shadow-marker: 0 0 7px #050505;
+$shadow-success:
+  inset 0 0 0 2px rgb(133 255 57 / 28%),
+  inset 0 0 23px rgb(119 255 31 / 15%),
+  0 0 17px rgb(119 255 31 / 45%);
+$shadow-bar-marker: 0 0 16px #9cff39;
 
 $content-width: 1920px;
 
-$size-05: 4px;
-$size-1: 8px;
-$size-2: 16px;
-$size-3: 24px;
-$size-4: 32px;
-$size-5: 40px;
-$size-6: 48px;
-$size-7: 56px;
-$size-8: 64px;
-$size-9: 72px;
-$size-10: 80px;
-$size-11: 88px;
-$size-12: 96px;
-$size-13: 104px;
-$size-14: 112px;
-$size-15: 120px;
+$space-05: 1px;
+$space-0: 2px;
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 12px;
+$space-4: 16px;
+$space-5: 20px;
+$space-6: 24px;
 
-$label-small: 10px;
-$label-medium: 12px;
-$label-large: 14px;
-$label-extra-large: 16px;
+$label-small: 9px;
+$label-medium: 11px;
 $body-small: 14px;
 $body-medium: 16px;
 $body-large: 18px;
-$headline-small: 20px;
 $headline-medium: 24px;
 $headline-large: 32px;
-$display-small: 24px;
-$display-medium: 36px;
-$display-large: 56px;
+$font-huge: clamp(18px, 2vw, 34px);
+$font-small: clamp(10px, 0.9vw, 14px);
+$font-subtitle: clamp(12px, 1.2vw, 18px);
+$font-title: clamp(16px, 1.8vw, 28px);
+$font-property: clamp(11px, 1.1vw, 16px);
+$font-main-title: clamp(22px, 3vw, 44px);
 
-$regular: 400;
+$letter-space-large: 0.09em;
+$letter-space-small: 0.07em;
+$letter-space-extra-small: 0.045em;
+$letter-space-tiny: 0.02em;
+
 $medium: 500;
 $bold: 700;
 $extra-bold: 800;
+$extra-black: 900;
 
-$corner-extra-small: 4px;
-$corner-small: 8px;
-$corner-medium: 12px;
-$corner-large: 16px;
-$corner-extra-large: 24px;
+$corner-extra-small: 5px;
 $corner-full: 9999px;
 
-$btn-icon: 8px;
-$btn-small: 8px 16px;
+$shelf-tablet_padding: 76px 114px 46px;
+$shelf-phone-padding: 75px 109px 58px;
+$shelf-padding: 16% 20% 10%;
+$modal-padding: 5% 4%;
+$modal-phone-padding: 6% 5%;
+$bar-padding: 10px 14px 20px;
+$current-recipe-padding: 12% 16% 25%;
+$current-recipe-phone-padding: 8% 15% 18%;
+$current-recipe-space: 1%;
+$current-recipe-phone-space: 6%;
+$page-space: clamp(4px, 0.8vw, 12px);
+$stock-padding: 1px 5px;
+$card-padding: 3px 6px;
+$main-space: clamp(10px, 1.5vw, 24px);
+$main-padding: clamp(12px, 1.5vw, 28px);
+$main-title-padding: 8px clamp(28px, 5vw, 72px) 12px;
+
 $btn-medium: 10px 20px;
 $btn-large: 16px 24px;
+$btn-huge: 20px 64px;
+$btn-main: 16px 36px;
 
-$level-1: 4px 4px $on-primary;
-$level-2: 6px 6px $on-primary;
-$level-3: 8px 8px $on-primary;
+$breakpoint-phone: 480px;
+$breakpoint-mobile: 700px;
+$breakpoint-compact: 800px;
+$breakpoint-tablet: 1100px;
 
-$border-primary: 2px solid $on-primary;
+$outline: 2px solid #c6ff5d;
+$outline-offset: 3px;
+
 $transition: all 0.3s ease;
+$transition-marker:
+  left 550ms cubic-bezier(0.22, 1, 0.36, 1),
+  background 250ms ease,
+  box-shadow 250ms ease;
+
+$icon-filter: drop-shadow(0 0 5px color-mix(in srgb, var(--bar-color), transparent 35%));
+$modal-filter: blur(4px);
+
+$polygon: polygon(9% 0, 91% 0, 100% 50%, 91% 100%, 9% 100%, 0 50%);

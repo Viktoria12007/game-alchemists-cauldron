@@ -1,4 +1,4 @@
-type GameStatus = 'menu' | 'playing' | 'paused' | 'game-over';
+type GameStatus = 'menu' | 'playing' | 'paused' | 'game-over' | 'leaderboard';
 
 interface IIngredient {
   id: string;
@@ -49,4 +49,15 @@ interface IBarOptions {
   icon: string;
 }
 
-export type { IIngredient, IGameState, IRecipe, IBarRange, IBarOptions };
+interface ILeader {
+  id: string;
+  name: string;
+  score: number;
+  date: number;
+}
+
+interface IStorage {
+  leaderboard: ILeader[];
+}
+
+export type { IIngredient, IGameState, IRecipe, IBarRange, IBarOptions, ILeader, IStorage };

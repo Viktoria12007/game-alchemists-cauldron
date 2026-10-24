@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Cinzel';
+  src:
+    local('Cinzel Black'),
+    local('Cinzel-Black'),
+    url('../assets/fonts/Cinzel-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cinzel';
+  src:
+    local('Cinzel Regular'),
+    local('Cinzel-Regular'),
+    url('../assets/fonts/Cinzel-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cinzel';
+  src:
+    local('Cinzel Bold'),
+    local('Cinzel-Bold'),
+    url('../assets/fonts/Cinzel-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}

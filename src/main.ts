@@ -4,7 +4,7 @@ import state from './state/game-state.ts';
 import { createLayout } from './ui/layout/layout.ts';
 
 document.addEventListener('visibilitychange', () => {
-  if (state.status === 'paused') {
+  if (state.status !== 'playing' || !state.startGame) {
     return;
   }
 

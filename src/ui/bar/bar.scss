@@ -1,58 +1,56 @@
+@use '../../styles/variables' as *;
+
 .bar {
-  --bar-color: #ff6539;
-  --bar-dark: #4b150e;
+  --bar-color: #{$color-danger};
+  --bar-dark: #{$color-dark-danger};
   position: relative;
   min-width: 0;
-  padding: 10px 14px 14px;
-  color: #f7e5b5;
-  background: linear-gradient(145deg, #7a5131, #4b3021);
-  border: 1px solid #d0a158;
-  border-radius: 5px;
-  box-shadow:
-    inset 0 0 0 2px rgb(12 17 22 / 38%),
-    0 3px 10px rgb(0 0 0 / 30%);
+  padding: $bar-padding;
+  color: $color-text-on-dark;
+  background: $gradient-bar;
+  border: $main-border;
+  border-radius: $corner-extra-small;
+  box-shadow: $shadow-bar;
 
   &--density {
-    --bar-color: #36bdf4;
-    --bar-dark: #062e50;
+    --bar-color: #{$color-density};
+    --bar-dark: #{$color-dark-density};
   }
 
   &--magic {
-    --bar-color: #b050f4;
-    --bar-dark: #321049;
+    --bar-color: #{$color-magic};
+    --bar-dark: #{$color-dark-magic};
   }
 
   &__heading {
     display: grid;
     grid-template-columns: 30px 1fr auto;
-    gap: 8px;
+    gap: $space-2;
     align-items: center;
-    margin-bottom: 9px;
+    margin-bottom: $space-2;
   }
 
   &__icon {
     color: var(--bar-color);
-    font-size: 24px;
+    font-size: $headline-medium;
     line-height: 1;
     text-align: center;
-    filter: drop-shadow(0 0 5px color-mix(in srgb, var(--bar-color), transparent 35%));
+    filter: $icon-filter;
   }
 
   &__title {
     margin: 0;
     color: var(--bar-color);
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 18px;
-    letter-spacing: 0.07em;
+    font-size: $body-large;
+    letter-spacing: $letter-space-small;
     text-transform: uppercase;
   }
 
   &__value {
     min-width: 34px;
     color: #fff5d5;
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: $body-large;
+    font-weight: $bold;
     text-align: right;
   }
 
@@ -60,14 +58,10 @@
     position: relative;
     height: 25px;
     overflow: visible;
-    border: 2px solid #8b6b36;
-    border-radius: 999px;
-    background:
-      repeating-linear-gradient(90deg, transparent 0 19px, rgb(255 255 255 / 17%) 20px 21px),
-      linear-gradient(90deg, var(--bar-dark), var(--bar-color), var(--bar-dark));
-    box-shadow:
-      inset 0 0 8px #000,
-      0 0 8px rgb(0 0 0 / 80%);
+    border: 2px solid $color-track-border;
+    border-radius: $corner-full;
+    background: $gradient-track;
+    box-shadow: $shadow-track;
   }
 
   &__zero-line {
@@ -76,8 +70,8 @@
     top: -5px;
     bottom: -5px;
     width: 1px;
-    background: rgb(255 244 201 / 80%);
-    box-shadow: 0 0 4px #fff0a0;
+    background: $color-zero-line;
+    box-shadow: $shadow-zero-line;
     transform: translateX(-50%);
   }
 
@@ -86,12 +80,10 @@
     z-index: 3;
     top: -7px;
     bottom: -7px;
-    border: 2px solid #a9ff42;
-    border-radius: 4px;
-    background: rgb(139 255 50 / 16%);
-    box-shadow:
-      0 0 9px rgb(150 255 44 / 85%),
-      inset 0 0 7px rgb(150 255 44 / 45%);
+    border: 2px solid $color-stock;
+    border-radius: $corner-extra-small;
+    background: $color-target;
+    box-shadow: $shadow-target;
   }
 
   &__marker {
@@ -100,24 +92,21 @@
     top: 50%;
     width: 18px;
     height: 18px;
-    border: 2px solid #ffe8a4;
-    background: #725b2e;
-    box-shadow: 0 0 7px #050505;
+    border: 2px solid $color-text-on-dark;
+    background: $color-marker;
+    box-shadow: $shadow-marker;
     transform: translate(-50%, -50%) rotate(45deg);
-    transition:
-      left 550ms cubic-bezier(0.22, 1, 0.36, 1),
-      background 250ms ease,
-      box-shadow 250ms ease;
+    transition: $transition-marker;
   }
 
   &__range {
     position: absolute;
     top: 29px;
     left: 50%;
-    color: #d7ff9f;
-    font-size: 11px;
-    font-weight: 700;
-    text-shadow: 0 1px 3px #000;
+    color: $color-range;
+    font-size: $label-medium;
+    font-weight: $bold;
+    text-shadow: $shadow-text-dark;
     transform: translateX(-50%);
   }
 
@@ -127,16 +116,15 @@
     bottom: -23px;
     left: 0;
     height: 14px;
-    color: #e8d6aa;
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 11px;
-    line-height: 14px;
+    color: $color-scale;
+    font-size: $label-medium;
+    line-height: $body-small;
     pointer-events: none;
   }
 
   &__scale-label {
     position: absolute;
-    text-shadow: 0 1px 3px #000;
+    text-shadow: $shadow-text-dark;
     transform: translateX(-50%);
 
     &::before {
@@ -145,36 +133,31 @@
       left: 50%;
       width: 1px;
       height: 4px;
-      background: #d3b776;
+      background: $color-scale-before;
       content: '';
       transform: translateX(-50%);
     }
 
     &--target {
       z-index: 1;
-      color: #b8ff63;
-      font-weight: 700;
-      text-shadow:
-        0 0 6px rgb(152 255 67 / 85%),
-        0 1px 3px #000;
+      color: $color-accent-green;
+      font-weight: $bold;
+      text-shadow: $shadow-text-green;
 
       &::before {
         height: 7px;
-        background: #b8ff63;
-        box-shadow: 0 0 4px #a5ff4d;
+        background: $color-accent-green;
+        box-shadow: $shadow-target-before;
       }
     }
   }
 
   &--success {
-    box-shadow:
-      inset 0 0 0 2px rgb(133 255 57 / 28%),
-      inset 0 0 23px rgb(119 255 31 / 15%),
-      0 0 17px rgb(119 255 31 / 45%);
+    box-shadow: $shadow-success;
 
     .bar__marker {
-      background: #baff53;
-      box-shadow: 0 0 16px #9cff39;
+      background: $color-bar-marker;
+      box-shadow: $shadow-bar-marker;
     }
   }
 }

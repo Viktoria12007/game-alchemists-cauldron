@@ -5,7 +5,7 @@ import { createBar } from '../bar/bar.ts';
 
 export function createBarsPanel() {
   const values = calculateCauldron(state.cauldronIngredients);
-  const panel = element('section', 'bars-panel');
+  const panel = element('div', 'bars-panel');
   panel.setAttribute('aria-label', 'Cauldron properties');
 
   add(

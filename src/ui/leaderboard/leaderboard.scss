@@ -1,0 +1,56 @@
+@use '../../styles/variables' as *;
+
+.leaderboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-5;
+  &__table {
+    color: $color-text-on-dark;
+    text-shadow: $shadow-text-dark;
+    border-collapse: collapse;
+    text-align: center;
+    padding: $body-small $space-6 $space-5;
+    background: $gradient-panel;
+    border: $main-border;
+    box-shadow: $shadow-panel;
+  }
+  &__thead {
+    border-bottom: $main-border;
+    & th {
+      padding: $space-6;
+    }
+  }
+  &__tbody {
+    & td {
+      padding: $space-6;
+    }
+  }
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-5;
+  }
+}
+
+@media (max-width: $breakpoint-phone) {
+  .leaderboard {
+    gap: $space-3;
+
+    &__table {
+      width: 100%;
+      font-size: $label-medium;
+    }
+
+    &__thead th,
+    &__tbody td {
+      padding: $space-1;
+      overflow-wrap: anywhere;
+    }
+
+    &__actions {
+      gap: $space-3;
+    }
+  }
+}

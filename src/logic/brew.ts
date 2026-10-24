@@ -3,6 +3,7 @@ import { recipeGenerator } from './recipe-generator.ts';
 import { calculateCauldron } from './calculate-cauldron.ts';
 import { settings } from '../data/settings.ts';
 import { createLayout } from '../ui/layout/layout.ts';
+import { gameOver } from './game-over.ts';
 
 export function brew() {
   const values = calculateCauldron(state.cauldronIngredients);
@@ -25,9 +26,7 @@ export function brew() {
     state.lives -= 1;
     if (state.lives === 0) {
       state.reasonGameOver = 'Lives reach 0!';
-      state.timeLeft = 0;
-      state.cauldronIngredients = [];
-      state.status = 'game-over';
+      gameOver();
       return;
     }
   }
@@ -36,9 +35,7 @@ export function brew() {
     const isEmptyStore = Object.values(state.shelfStock).every((value) => value === 0);
     if (isEmptyStore) {
       state.reasonGameOver = 'Out of ingredients!';
-      state.timeLeft = 0;
-      state.cauldronIngredients = [];
-      state.status = 'game-over';
+      gameOver();
       return;
     }
   }

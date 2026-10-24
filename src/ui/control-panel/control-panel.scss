@@ -1,5 +1,8 @@
+@use '../../styles/_variables' as *;
+
 .control-panel {
   grid-column: 1/-1;
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,5 +15,27 @@
   }
   &[data-visible='false'] {
     display: none;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .control-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: $space-3;
+    width: 100%;
+  }
+
+  .control-panel__button {
+    width: 100%;
+  }
+
+  .control-panel .main-button {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+    min-inline-size: 0;
+    min-block-size: 60px;
+    padding: $btn-main;
   }
 }

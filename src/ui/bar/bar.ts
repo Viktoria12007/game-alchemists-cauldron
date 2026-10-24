@@ -45,7 +45,7 @@ export function createBar({ id, label, value, target, tone, icon }: IBarOptions)
   const oldPosition = previousPositions.get(id) ?? currentPosition;
   previousPositions.set(id, currentPosition);
 
-  const bar = element('section', `bar bar--${tone}${isInTarget ? ' bar--success' : ''}`);
+  const bar = element('div', `bar bar--${tone}${isInTarget ? ' bar--success' : ''}`);
   bar.setAttribute('aria-label', `${label}: ${value}. Target: ${target.min} to ${target.max}`);
 
   const heading = element('div', 'bar__heading');

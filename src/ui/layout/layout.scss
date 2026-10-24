@@ -1,12 +1,85 @@
+@use '../../styles/variables' as *;
+
 .game-main {
   min-height: 100vh;
   display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  gap: $main-space;
+  grid-template-columns: minmax(250px, 1fr) minmax(280px, 0.9fr) minmax(250px, 1fr);
   place-items: center stretch;
-  padding: 20px;
+  padding: $main-padding;
   background-image: url('../../assets/game-background.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+}
+
+.game-title {
+  grid-column: 1 / -1;
+  position: relative;
+  isolation: isolate;
+  margin: 0;
+  padding: $main-title-padding;
+  color: $color-text-on-paper;
+  font-size: $font-main-title;
+  font-weight: $extra-black;
+  letter-spacing: $letter-space-extra-small;
+  line-height: 1;
+  text-align: center;
+  text-shadow: $shadow-text-main-title;
+  text-transform: uppercase;
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .game-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lives-panel {
+    order: 1;
+  }
+
+  .game-title {
+    order: 2;
+  }
+
+  .current-recipe {
+    order: 3;
+    grid-column: 1 / -1;
+  }
+
+  .cauldron {
+    order: 4;
+    grid-column: 1 / -1;
+  }
+
+  .ingredients-list {
+    order: 5;
+    grid-column: 1 / -1;
+  }
+
+  .bars-panel {
+    order: 6;
+  }
+
+  .control-panel {
+    order: 7;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .game-title {
+    padding-inline: $space-6;
+    letter-spacing: $letter-space-tiny;
+    overflow-wrap: anywhere;
+  }
+
+  .game-main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ingredients-list,
+  .cauldron,
+  .current-recipe {
+    grid-column: 1;
+  }
 }

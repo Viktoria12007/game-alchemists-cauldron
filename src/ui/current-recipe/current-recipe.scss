@@ -1,19 +1,71 @@
+@use '../../styles/_variables' as *;
+
 .current-recipe {
-  place-self: stretch;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
+  place-self: center;
+  box-sizing: border-box;
+  width: min(100%, 620px);
+  aspect-ratio: 3 / 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: $current-recipe-space;
+  padding: $current-recipe-padding;
+  color: $color-text-on-paper;
+  text-align: center;
+  text-shadow: $shadow-text-on-paper;
   background-image: url('../../assets/current-recipe.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+
+  &__page {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: $page-space;
+  }
+
+  &__sub-title {
+    font-size: $font-subtitle;
+  }
+
+  &__title {
+    color: $color-recipe-title;
+    font-size: $font-title;
+  }
+
+  &__property {
+    font-size: $font-property;
+    font-weight: $bold;
+  }
+
   &__property--highlighted {
-    color: #b8ff63;
-    font-weight: 700;
-    text-shadow:
-      0 0 6px rgb(152 255 67 / 85%),
-      0 1px 3px #000;
+    color: $color-accent-green;
+    font-weight: $bold;
+    text-shadow: $shadow-text-green;
+  }
+}
+
+@media (max-width: $breakpoint-phone) {
+  .current-recipe {
+    column-gap: $current-recipe-phone-space;
+    padding: $current-recipe-phone-padding;
+
+    &__page {
+      gap: $space-3;
+    }
+
+    &__sub-title {
+      font-size: $label-small;
+    }
+
+    &__title {
+      font-size: $body-small;
+    }
+
+    &__property {
+      font-size: $label-small;
+    }
   }
 }

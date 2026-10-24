@@ -4,20 +4,32 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: $space-3;
   &__time {
+    width: 135px;
+    padding: $space-2 $space-5;
+    overflow: hidden;
+    color: $color-text-on-dark;
+    font-weight: $bold;
+    text-shadow: $shadow-text-dark;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    clip-path: $polygon;
+    background: $gradient-control;
     transition: $transition;
     &--danger {
-      color: red;
+      color: darkred;
       animation: impulse 1s infinite;
-      opacity: 0;
+      text-shadow: none;
       transform: scale(1);
+      clip-path: none;
+      background: transparent;
     }
   }
 }
 @keyframes impulse {
   to {
-    opacity: 1;
-    transform: scale(1.5);
+    transform: scale(1.6);
   }
 }
