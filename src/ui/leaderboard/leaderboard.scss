@@ -6,6 +6,7 @@
   align-items: center;
   gap: $space-5;
   &__table {
+    width: 100%;
     color: $color-text-on-dark;
     text-shadow: $shadow-text-dark;
     border-collapse: collapse;

@@ -1,5 +1,5 @@
-import { recipePool } from '../data/recipes.ts';
+import type { IRecipe } from '../types/types.ts';
 
-export function recipeGenerator() {
-  return recipePool[Math.floor(Math.random() * 18)];
+export function recipeGenerator(recipes: IRecipe[]) {
+  return recipes[Math.floor(Math.random() * recipes.length)];
 }

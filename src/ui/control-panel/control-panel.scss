@@ -6,15 +6,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.main-button {
-  text-transform: capitalize;
-  &[data-visible='true'] {
-    display: inline-block;
-  }
-  &[data-visible='false'] {
-    display: none;
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-3;
   }
 }
 
