@@ -3,6 +3,7 @@ import { startGame } from '../../logic/start-game.ts';
 import { brew } from '../../logic/brew.ts';
 import state from '../../state/game-state.ts';
 import { renderLeaderboard } from '../../logic/render/render-leaderboard.ts';
+import { renderSettings } from '../../logic/render/render-settings.ts';
 
 export function createControlPanel() {
   const controlPanel = element('div', 'control-panel');
@@ -16,6 +17,8 @@ export function createControlPanel() {
   brewButton.dataset.visible = `${state.startGame}`;
   brewButton.disabled = state.cauldronIngredients.length === 0;
   const settingsButton = button('Settings', 'button control-panel__button');
+  settingsButton.addEventListener('click', renderSettings);
+  settingsButton.disabled = state.startGame;
   add(controlPanel, leaderboardButton, startGameButton, brewButton, settingsButton);
   return controlPanel;
 }
