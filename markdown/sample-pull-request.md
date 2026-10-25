@@ -1,7 +1,7 @@
 1. Task: https://github.com/rolling-scopes-school/qualifying-stage/blob/main/tasks/game-alchemists-cauldron/README.md
 
 2. Screenshot:  
-![img.png](img.png)
+   ![img.png](img.png)
 
 3. Deployment: https://viktoria12007.github.io/game-alchemists-cauldron/
 
