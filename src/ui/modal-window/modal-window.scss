@@ -1,5 +1,10 @@
 @use '../../styles/variables' as *;
 
+html.modal-window-open,
+body.modal-window-open {
+  overflow: hidden;
+}
+
 .modal-window {
   position: fixed;
   z-index: 100;
@@ -25,17 +30,35 @@
     min-width: 0;
     min-height: 0;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
     color: $color-text-on-paper;
     text-shadow: $shadow-text-on-paper;
   }
 }
 
+@media (min-width: ($breakpoint-mobile + 1px)) {
+  .modal-window__dialog--wide {
+    width: min(860px, calc(100vw - 48px), calc((100vh - 48px) * 1.5));
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .modal-window {
+    padding: $space-4;
+    &__dialog {
+      width: min(640px, calc(100vw - 32px), calc((100vh - 32px) * 0.8));
+      aspect-ratio: 4 / 5;
+      padding: $modal-phone-padding;
+    }
+  }
+}
+
 @media (max-width: $breakpoint-phone) {
   .modal-window {
-    padding: $space-3;
-
+    padding: 0;
     &__dialog {
-      width: min(640px, calc(100vw - 24px), calc((100vh - 24px) * 1.5));
+      width: min(640px, 100vw, calc(100vh * 0.8));
       padding: $modal-phone-padding;
     }
   }

@@ -5,6 +5,8 @@ import state from '../../state/game-state.ts';
 import { renderLeaderboard } from '../../logic/render/render-leaderboard.ts';
 import { renderSettings } from '../../logic/render/render-settings.ts';
 import { renderHelp } from '../../logic/render/render-help.ts';
+import { continueGame } from '../../logic/continue-game.ts';
+import { loadGame } from '../../storage/game-save.ts';
 
 export function createControlPanel() {
   const controlPanel = element('div', 'control-panel');
@@ -18,7 +20,10 @@ export function createControlPanel() {
   add(actions, helpButton, leaderboardButton);
   const startGameButton = button('Start game', 'main-button');
   startGameButton.addEventListener('click', startGame);
-  startGameButton.dataset.visible = `${!state.startGame}`;
+  startGameButton.dataset.visible = `${!state.startGame && loadGame() === null}`;
+  const continueGameButton = button('Continue Game', 'main-button');
+  continueGameButton.addEventListener('click', continueGame);
+  continueGameButton.dataset.visible = `${!state.startGame && loadGame() !== null}`;
   const brewButton = button('Brew', 'main-button');
   brewButton.addEventListener('click', brew);
   brewButton.dataset.visible = `${state.startGame}`;
@@ -26,6 +31,6 @@ export function createControlPanel() {
   const settingsButton = button('Settings', 'button control-panel__button');
   settingsButton.addEventListener('click', renderSettings);
   settingsButton.disabled = state.startGame;
-  add(controlPanel, actions, startGameButton, brewButton, settingsButton);
+  add(controlPanel, actions, startGameButton, continueGameButton, brewButton, settingsButton);
   return controlPanel;
 }

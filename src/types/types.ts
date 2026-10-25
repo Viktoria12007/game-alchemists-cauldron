@@ -61,8 +61,32 @@ interface ILeader {
   difficulty: Difficulty;
 }
 
-interface IStorage {
+interface ILeaderboardSave {
   leaderboard: ILeader[];
+}
+
+interface IGameSave {
+  difficulty: Difficulty;
+  score: number;
+  timeLeft: number;
+  lives: number;
+  activeRecipe: IRecipe;
+  cauldronIngredients: IIngredient[];
+  shelfStock: Record<string, number>;
+  status: 'playing' | 'paused';
+}
+
+type ModalContent = Node | (() => Node);
+
+interface IModalWindowOptions {
+  content: ModalContent;
+  onClose?: () => void;
+  size?: 'default' | 'wide';
+}
+
+interface IModalWindow {
+  element: HTMLElement;
+  close: () => void;
 }
 
 export type {
@@ -73,5 +97,9 @@ export type {
   IBarRange,
   IBarOptions,
   ILeader,
-  IStorage,
+  ILeaderboardSave,
+  IGameSave,
+  ModalContent,
+  IModalWindowOptions,
+  IModalWindow,
 };
