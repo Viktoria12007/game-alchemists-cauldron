@@ -1,0 +1,163 @@
+@use '../../styles/variables' as *;
+
+.bar {
+  --bar-color: #{$color-danger};
+  --bar-dark: #{$color-dark-danger};
+  position: relative;
+  min-width: 0;
+  padding: $bar-padding;
+  color: $color-text-on-dark;
+  background: $gradient-bar;
+  border: $main-border;
+  border-radius: $corner-extra-small;
+  box-shadow: $shadow-bar;
+
+  &--density {
+    --bar-color: #{$color-density};
+    --bar-dark: #{$color-dark-density};
+  }
+
+  &--magic {
+    --bar-color: #{$color-magic};
+    --bar-dark: #{$color-dark-magic};
+  }
+
+  &__heading {
+    display: grid;
+    grid-template-columns: 30px 1fr auto;
+    gap: $space-2;
+    align-items: center;
+    margin-bottom: $space-2;
+  }
+
+  &__icon {
+    color: var(--bar-color);
+    font-size: $headline-medium;
+    line-height: 1;
+    text-align: center;
+    filter: $icon-filter;
+  }
+
+  &__title {
+    margin: 0;
+    color: var(--bar-color);
+    font-size: $body-large;
+    letter-spacing: $letter-space-small;
+    text-transform: uppercase;
+  }
+
+  &__value {
+    min-width: 34px;
+    color: #fff5d5;
+    font-size: $body-large;
+    font-weight: $bold;
+    text-align: right;
+  }
+
+  &__track {
+    position: relative;
+    height: 25px;
+    overflow: visible;
+    border: 2px solid $color-track-border;
+    border-radius: $corner-full;
+    background: $gradient-track;
+    box-shadow: $shadow-track;
+  }
+
+  &__zero-line {
+    position: absolute;
+    z-index: 2;
+    top: -5px;
+    bottom: -5px;
+    width: 1px;
+    background: $color-zero-line;
+    box-shadow: $shadow-zero-line;
+    transform: translateX(-50%);
+  }
+
+  &__target-zone {
+    position: absolute;
+    z-index: 3;
+    top: -7px;
+    bottom: -7px;
+    border: 2px solid $color-stock;
+    border-radius: $corner-extra-small;
+    background: $color-target;
+    box-shadow: $shadow-target;
+  }
+
+  &__marker {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    border: 2px solid $color-text-on-dark;
+    background: $color-marker;
+    box-shadow: $shadow-marker;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: $transition-marker;
+  }
+
+  &__range {
+    position: absolute;
+    top: 29px;
+    left: 50%;
+    color: $color-range;
+    font-size: $label-medium;
+    font-weight: $bold;
+    text-shadow: $shadow-text-dark;
+    transform: translateX(-50%);
+  }
+
+  &__scale {
+    position: absolute;
+    right: 0;
+    bottom: -23px;
+    left: 0;
+    height: 14px;
+    color: $color-scale;
+    font-size: $label-medium;
+    line-height: $body-small;
+    pointer-events: none;
+  }
+
+  &__scale-label {
+    position: absolute;
+    text-shadow: $shadow-text-dark;
+    transform: translateX(-50%);
+
+    &::before {
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      width: 1px;
+      height: 4px;
+      background: $color-scale-before;
+      content: '';
+      transform: translateX(-50%);
+    }
+
+    &--target {
+      z-index: 1;
+      color: $color-accent-green;
+      font-weight: $bold;
+      text-shadow: $shadow-text-green;
+
+      &::before {
+        height: 7px;
+        background: $color-accent-green;
+        box-shadow: $shadow-target-before;
+      }
+    }
+  }
+
+  &--success {
+    box-shadow: $shadow-success;
+
+    .bar__marker {
+      background: $color-bar-marker;
+      box-shadow: $shadow-bar-marker;
+    }
+  }
+}

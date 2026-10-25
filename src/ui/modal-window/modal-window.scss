@@ -1,0 +1,43 @@
+@use '../../styles/variables' as *;
+
+.modal-window {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: $space-6;
+  background: $color-background-modal-window;
+  backdrop-filter: $modal-filter;
+
+  &__dialog {
+    width: min(640px, calc(100vw - 48px), calc((100vh - 48px) * 1.5));
+    aspect-ratio: 3 / 2;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr);
+    overflow: hidden;
+    box-sizing: border-box;
+    background: url('../../assets/modal-frame.png') center / 100% 100% no-repeat;
+    padding: $modal-padding;
+  }
+
+  &__content {
+    min-width: 0;
+    min-height: 0;
+    overflow-y: auto;
+    color: $color-text-on-paper;
+    text-align: center;
+    text-shadow: $shadow-text-on-paper;
+  }
+}
+
+@media (max-width: $breakpoint-phone) {
+  .modal-window {
+    padding: $space-3;
+
+    &__dialog {
+      width: min(640px, calc(100vw - 24px), calc((100vh - 24px) * 1.5));
+      padding: $modal-phone-padding;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@use '../../styles/_variables' as *;
+
+.game-over {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $space-5;
+  &__title {
+    font-size: $headline-large;
+  }
+  &__subtitle {
+    font-weight: $bold;
+  }
+  &__score {
+    font-weight: $bold;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__input {
+    width: 100%;
+    padding: $btn-medium;
+    margin: $space-5 0;
+    background: $color-white;
+    border: $main-border;
+    border-radius: $corner-extra-small;
+    &:invalid {
+      color: $color-danger;
+      border: 1px solid $color-danger;
+    }
+  }
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-5;
+  }
+}

@@ -1,0 +1,35 @@
+@use '../../styles/variables' as *;
+
+.ingredients-list {
+  width: min(100%, 460px);
+  aspect-ratio: 2 / 3;
+  place-self: center;
+  display: grid;
+  grid-template-rows: repeat(6, minmax(0, 1fr));
+  padding: $shelf-padding;
+  background-image: url('../../assets/ingredient-shelf.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+
+  &__item {
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .ingredients-list {
+    width: min(100%, 420px);
+    padding: $shelf-tablet_padding;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .ingredients-list {
+    width: min(100%, 400px);
+    padding: $shelf-phone-padding;
+  }
+}
