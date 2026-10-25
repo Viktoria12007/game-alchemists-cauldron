@@ -26,7 +26,7 @@ export function createIngredientCard(ingredient: IIngredient) {
   addButton.addEventListener('click', () => addIngredient(ingredient.id));
   addButton.disabled =
     state.shelfStock[ingredient.id] === 0 ||
-    state.cauldronIngredients.length === settings.maxCauldronIngredients;
+    state.cauldronIngredients.length === settings[state.difficulty].maxIngredientsInCauldron;
   add(wrap, title, properties);
   add(card, icon, wrap, addButton);
   return card;
