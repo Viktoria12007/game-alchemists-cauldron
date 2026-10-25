@@ -36,11 +36,13 @@ export function createModalWindow({
   add(contentContainer, resolveContent(content));
   add(dialog, contentContainer);
   add(overlay, dialog);
+  lockPageScroll();
 
   const close = () => {
     if (isClosed) return;
     isClosed = true;
     overlay.remove();
+    unlockPageScroll();
     onClose?.();
   };
 
