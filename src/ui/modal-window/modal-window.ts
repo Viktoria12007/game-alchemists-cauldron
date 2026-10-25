@@ -1,22 +1,23 @@
 import { add, element } from '../dom.ts';
-
-type ModalContent = Node | (() => Node);
-
-interface IModalWindowOptions {
-  content: ModalContent;
-  onClose?: () => void;
-}
-
-interface IModalWindow {
-  element: HTMLElement;
-  close: () => void;
-}
+import type { IModalWindow, IModalWindowOptions, ModalContent } from '../../types/types.ts';
 
 function resolveContent(content: ModalContent) {
   return typeof content === 'function' ? content() : content;
 }
 
-export function createModalWindow({ content, onClose }: IModalWindowOptions): IModalWindow {
+function lockPageScroll() {
+  document.documentElement.classList.add('modal-window-open');
+  document.body.classList.add('modal-window-open');
+}
+
+function unlockPageScroll() {
+  const modalsWindows = document.querySelectorAll('.modal-window');
+  if (modalsWindows.length > 0) return;
+
+  document.documentElement.classList.remove('modal-window-open');
+  document.body.classList.remove('modal-window-open');
+}
+
 export function createModalWindow({
   content,
   onClose,
