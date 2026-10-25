@@ -61,7 +61,7 @@ interface ILeader {
   difficulty: Difficulty;
 }
 
-interface IStorage {
+interface ILeaderboardSave {
   leaderboard: ILeader[];
 }
 
@@ -84,6 +84,6 @@ export type {
   IBarRange,
   IBarOptions,
   ILeader,
-  IStorage,
+  ILeaderboardSave,
   IGameSave,
 };
