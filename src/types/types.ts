@@ -76,6 +76,19 @@ interface IGameSave {
   status: 'playing' | 'paused';
 }
 
+type ModalContent = Node | (() => Node);
+
+interface IModalWindowOptions {
+  content: ModalContent;
+  onClose?: () => void;
+  size?: 'default' | 'wide';
+}
+
+interface IModalWindow {
+  element: HTMLElement;
+  close: () => void;
+}
+
 export type {
   Difficulty,
   IIngredient,
@@ -86,4 +99,7 @@ export type {
   ILeader,
   ILeaderboardSave,
   IGameSave,
+  ModalContent,
+  IModalWindowOptions,
+  IModalWindow,
 };
