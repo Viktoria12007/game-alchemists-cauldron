@@ -5,6 +5,7 @@ import { settings } from '../data/settings.ts';
 import { createLayout } from '../ui/layout/layout.ts';
 import { gameOver } from './game-over.ts';
 import { getRecipesByDifficulty } from './get-recipes-by-difficulty.ts';
+import { saveGame } from '../storage/game-save.ts';
 
 export function brew() {
   const values = calculateCauldron(state.cauldronIngredients);
@@ -49,5 +50,6 @@ export function brew() {
   }
 
   state.cauldronIngredients = [];
+  saveGame();
   createLayout();
 }
