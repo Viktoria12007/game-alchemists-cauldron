@@ -1,7 +1,7 @@
 import { openModalWindow } from '../../ui/modal-window/modal-window.ts';
 import { add, button, element } from '../../ui/dom.ts';
 import { clearLeaderboard } from '../../storage/leaderboard-save.ts';
-import {renderLeaderboard} from "./render-leaderboard.ts";
+import { renderLeaderboard } from './render-leaderboard.ts';
 
 export function renderConfirm() {
   const main = document.querySelector('.game-main');
