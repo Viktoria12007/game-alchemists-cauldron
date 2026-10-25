@@ -33,3 +33,19 @@
     transform: scale(1.6);
   }
 }
+
+@media (max-width: ($breakpoint-tablet - 76px)) {
+  .timer {
+    &__time {
+      width: 122px;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-phone) {
+  .timer {
+    &__time {
+      width: 105px;
+    }
+  }
+}
