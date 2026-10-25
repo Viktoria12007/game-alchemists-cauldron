@@ -1,7 +1,7 @@
 import { add, button, element } from '../dom.ts';
 import state from '../../state/game-state.ts';
 import { playAgain } from '../../logic/play-again.ts';
-import { checkPlayerScore } from '../../storage/check-player-score.ts';
+import { checkPlayerScore } from '../../storage/leaderboard-save.ts';
 import { submitScore } from '../../logic/submit-score.ts';
 
 export function createGameOver() {
@@ -31,12 +31,12 @@ export function createGameOver() {
     const mainButton = button('Submit score', 'button game-over__button');
     mainButton.type = 'submit';
     form.addEventListener('submit', (event) => {
+      event.preventDefault();
       const playerName = input.value.trim();
       input.setCustomValidity(playerName ? '' : 'Name cannot contain only spaces.');
       if (input.checkValidity()) {
-        submitScore(event, playerName);
+        submitScore(playerName);
       } else {
-        event.preventDefault();
         input.reportValidity();
       }
     });

@@ -17,6 +17,8 @@
 @use '../ui/pause/pause';
 @use '../ui/leaderboard/leaderboard';
 @use '../ui/score/score';
+@use '../ui/settings/settings';
+@use '../ui/help/help';
 
 * {
   box-sizing: border-box;
@@ -123,6 +125,14 @@ a {
   &:disabled {
     cursor: not-allowed;
   }
+
+  &[data-visible='true'] {
+    display: inline-block;
+  }
+
+  &[data-visible='false'] {
+    display: none;
+  }
 }
 
 a {
@@ -150,6 +160,7 @@ p {
 }
 
 .confirm {
+  margin: auto 0;
   display: flex;
   flex-direction: column;
   align-items: center;

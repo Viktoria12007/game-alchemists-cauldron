@@ -1,4 +1,6 @@
-type GameStatus = 'menu' | 'playing' | 'paused' | 'game-over' | 'leaderboard';
+type Difficulty = 'easy' | 'medium' | 'hard';
+
+type GameStatus = 'menu' | 'playing' | 'paused' | 'game-over' | 'leaderboard' | 'help';
 
 interface IIngredient {
   id: string;
@@ -20,6 +22,7 @@ interface IRecipe {
   temperature: IRecipeRange;
   density: IRecipeRange;
   magicPower: IRecipeRange;
+  difficulty: Difficulty;
 }
 
 interface IGameState {
@@ -33,6 +36,7 @@ interface IGameState {
   startGame: boolean;
   closeModalWindow: () => void;
   reasonGameOver: string;
+  difficulty: Difficulty;
 }
 
 interface IBarRange {
@@ -54,10 +58,48 @@ interface ILeader {
   name: string;
   score: number;
   date: number;
+  difficulty: Difficulty;
 }
 
-interface IStorage {
+interface ILeaderboardSave {
   leaderboard: ILeader[];
 }
 
-export type { IIngredient, IGameState, IRecipe, IBarRange, IBarOptions, ILeader, IStorage };
+interface IGameSave {
+  difficulty: Difficulty;
+  score: number;
+  timeLeft: number;
+  lives: number;
+  activeRecipe: IRecipe;
+  cauldronIngredients: IIngredient[];
+  shelfStock: Record<string, number>;
+  status: 'playing' | 'paused';
+}
+
+type ModalContent = Node | (() => Node);
+
+interface IModalWindowOptions {
+  content: ModalContent;
+  onClose?: () => void;
+  size?: 'default' | 'wide';
+}
+
+interface IModalWindow {
+  element: HTMLElement;
+  close: () => void;
+}
+
+export type {
+  Difficulty,
+  IIngredient,
+  IGameState,
+  IRecipe,
+  IBarRange,
+  IBarOptions,
+  ILeader,
+  ILeaderboardSave,
+  IGameSave,
+  ModalContent,
+  IModalWindowOptions,
+  IModalWindow,
+};

@@ -1,0 +1,13 @@
+@use '../../styles/_variables' as *;
+
+.help {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  &__title {
+    align-self: center;
+  }
+  &__button {
+    align-self: center;
+  }
+}

@@ -1,0 +1,10 @@
+@use '../../styles/_variables' as *;
+
+.settings {
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $space-3;
+}

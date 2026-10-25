@@ -6,6 +6,7 @@
   align-items: center;
   gap: $space-5;
   &__table {
+    width: 100%;
     color: $color-text-on-dark;
     text-shadow: $shadow-text-dark;
     border-collapse: collapse;
@@ -18,12 +19,12 @@
   &__thead {
     border-bottom: $main-border;
     & th {
-      padding: $space-6;
+      padding: $space-4;
     }
   }
   &__tbody {
     & td {
-      padding: $space-6;
+      padding: $space-4;
     }
   }
   &__actions {

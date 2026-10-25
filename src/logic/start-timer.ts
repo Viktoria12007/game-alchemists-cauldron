@@ -2,6 +2,7 @@ import state from '../state/game-state.ts';
 import { renderTimer } from './render/render-timer.ts';
 import { createLayout } from '../ui/layout/layout.ts';
 import { gameOver } from './game-over.ts';
+import { saveGame } from '../storage/game-save.ts';
 
 export function startTimer() {
   const endTime = Date.now() + state.timeLeft * 1000;
@@ -19,6 +20,7 @@ export function startTimer() {
       return;
     }
     state.timeLeft = Math.floor((endTime - Date.now()) / 1000);
+    saveGame();
     renderTimer();
   }, 1000);
 }

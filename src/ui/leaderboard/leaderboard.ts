@@ -1,8 +1,8 @@
 import { add, button, element } from '../dom.ts';
-import { getStorage } from '../../storage/get-storage.ts';
+import { getStorage } from '../../storage/leaderboard-save.ts';
 import { formatDate } from '../../logic/format-date.ts';
-import { resume } from '../../logic/resume.ts';
 import { renderConfirm } from '../../logic/render/render-confirm.ts';
+import { playAgain } from '../../logic/play-again.ts';
 
 export function createLeaderboard() {
   const elementLeaderboard = element('div', 'leaderboard');
@@ -14,7 +14,7 @@ export function createLeaderboard() {
     const header = element('thead', 'leaderboard__thead');
     const tr = element('tr', 'leaderboard__row');
     add(header, tr);
-    const subtitles = ['Rank', 'Name', 'Score', 'Date'];
+    const subtitles = ['Rank', 'Name', 'Score', 'Date', 'Difficulty'];
     for (const subtitle of subtitles) {
       const th = element('th', 'leaderboard__th', subtitle);
       add(tr, th);
@@ -27,7 +27,8 @@ export function createLeaderboard() {
       const name = element('td', 'leaderboard__cell', leader.name);
       const score = element('td', 'leaderboard__cell', leader.score.toString());
       const date = element('td', 'leaderboard__cell', formatDate(leader.date));
-      add(row, rank, name, score, date);
+      const difficulty = element('td', 'leaderboard__cell', leader.difficulty);
+      add(row, rank, name, score, date, difficulty);
       body.append(row);
     }
     add(elementShowed, header, body);
@@ -38,7 +39,7 @@ export function createLeaderboard() {
   const clearButton = button('Clear leaderboard', 'button leaderboard__button');
   clearButton.addEventListener('click', renderConfirm);
   const backButton = button('Back', 'button leaderboard__button');
-  backButton.addEventListener('click', resume);
+  backButton.addEventListener('click', playAgain);
   add(actions, clearButton, backButton);
   add(elementLeaderboard, title, elementShowed, actions);
   return elementLeaderboard;
