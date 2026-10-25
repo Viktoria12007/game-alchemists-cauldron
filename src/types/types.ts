@@ -65,6 +65,17 @@ interface IStorage {
   leaderboard: ILeader[];
 }
 
+interface IGameSave {
+  difficulty: Difficulty;
+  score: number;
+  timeLeft: number;
+  lives: number;
+  activeRecipe: IRecipe;
+  cauldronIngredients: IIngredient[];
+  shelfStock: Record<string, number>;
+  status: 'playing' | 'paused';
+}
+
 export type {
   Difficulty,
   IIngredient,
@@ -74,4 +85,5 @@ export type {
   IBarOptions,
   ILeader,
   IStorage,
+  IGameSave,
 };
