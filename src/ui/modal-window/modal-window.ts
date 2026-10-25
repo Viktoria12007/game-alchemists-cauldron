@@ -17,14 +17,20 @@ function resolveContent(content: ModalContent) {
 }
 
 export function createModalWindow({ content, onClose }: IModalWindowOptions): IModalWindow {
+export function createModalWindow({
+  content,
+  onClose,
+  size = 'default',
+}: IModalWindowOptions): IModalWindow {
   const overlay = element('div', 'modal-window');
-  const dialog = element('section', 'modal-window__dialog');
+  const dialog = element('div', 'modal-window__dialog');
   const contentContainer = element('div', 'modal-window__content');
   let isClosed = false;
 
   overlay.setAttribute('role', 'presentation');
   dialog.setAttribute('role', 'dialog');
   dialog.setAttribute('aria-modal', 'true');
+  if (size === 'wide') dialog.classList.add('modal-window__dialog--wide');
 
   add(contentContainer, resolveContent(content));
   add(dialog, contentContainer);
