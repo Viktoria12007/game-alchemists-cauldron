@@ -39,10 +39,3 @@ export function createModalWindow({ content, onClose }: IModalWindowOptions): IM
 
   return { element: overlay, close };
 }
-
-export function openModalWindow(options: IModalWindowOptions): IModalWindow {
-  const modal = createModalWindow(options);
-  return modal;
-}
-
-export type { IModalWindow, IModalWindowOptions };
