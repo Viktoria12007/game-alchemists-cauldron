@@ -1,5 +1,5 @@
 import { add, button, element } from '../dom.ts';
-import { getStorage } from '../../storage/get-storage.ts';
+import { getStorage } from '../../storage/leaderboard-save.ts';
 import { formatDate } from '../../logic/format-date.ts';
 import { renderConfirm } from '../../logic/render/render-confirm.ts';
 import { playAgain } from '../../logic/play-again.ts';

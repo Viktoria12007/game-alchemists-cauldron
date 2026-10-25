@@ -1,6 +1,7 @@
 import { openModalWindow } from '../../ui/modal-window/modal-window.ts';
 import { add, button, element } from '../../ui/dom.ts';
-import { clearLeaderboard } from '../../storage/clear-leaderboard.ts';
+import { clearLeaderboard } from '../../storage/leaderboard-save.ts';
+import {renderLeaderboard} from "./render-leaderboard.ts";
 
 export function renderConfirm() {
   const main = document.querySelector('.game-main');
@@ -17,6 +18,7 @@ export function renderConfirm() {
   yesButton.addEventListener('click', () => {
     modalWindow.close();
     clearLeaderboard();
+    renderLeaderboard();
   });
   noButton.addEventListener('click', modalWindow.close);
   add(main, modalWindow.element);

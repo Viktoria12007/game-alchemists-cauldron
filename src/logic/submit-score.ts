@@ -1,4 +1,4 @@
-import { addLeader } from '../storage/add-leader.ts';
+import { addLeader } from '../storage/leaderboard-save.ts';
 import { renderLeaderboard } from './render/render-leaderboard.ts';
 import state from '../state/game-state.ts';
 

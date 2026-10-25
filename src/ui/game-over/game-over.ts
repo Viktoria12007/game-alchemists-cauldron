@@ -1,7 +1,7 @@
 import { add, button, element } from '../dom.ts';
 import state from '../../state/game-state.ts';
 import { playAgain } from '../../logic/play-again.ts';
-import { checkPlayerScore } from '../../storage/check-player-score.ts';
+import { checkPlayerScore } from '../../storage/leaderboard-save.ts';
 import { submitScore } from '../../logic/submit-score.ts';
 
 export function createGameOver() {
