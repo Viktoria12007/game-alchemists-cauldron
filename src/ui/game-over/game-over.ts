@@ -31,12 +31,12 @@ export function createGameOver() {
     const mainButton = button('Submit score', 'button game-over__button');
     mainButton.type = 'submit';
     form.addEventListener('submit', (event) => {
+      event.preventDefault();
       const playerName = input.value.trim();
       input.setCustomValidity(playerName ? '' : 'Name cannot contain only spaces.');
       if (input.checkValidity()) {
-        submitScore(event, playerName);
+        submitScore(playerName);
       } else {
-        event.preventDefault();
         input.reportValidity();
       }
     });
