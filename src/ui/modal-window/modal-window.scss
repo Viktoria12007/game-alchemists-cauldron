@@ -1,5 +1,10 @@
 @use '../../styles/variables' as *;
 
+html.modal-window-open,
+body.modal-window-open {
+  overflow: hidden;
+}
+
 .modal-window {
   position: fixed;
   z-index: 100;
@@ -27,6 +32,12 @@
     overflow-y: auto;
     color: $color-text-on-paper;
     text-shadow: $shadow-text-on-paper;
+  }
+}
+
+@media (min-width: ($breakpoint-mobile + 1px)) {
+  .modal-window__dialog--wide {
+    width: min(860px, calc(100vw - 48px), calc((100vh - 48px) * 1.5));
   }
 }
 
