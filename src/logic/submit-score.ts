@@ -2,8 +2,7 @@ import { addLeader } from '../storage/leaderboard-save.ts';
 import { renderLeaderboard } from './render/render-leaderboard.ts';
 import state from '../state/game-state.ts';
 
-export function submitScore(event: SubmitEvent, name: string) {
-  event.preventDefault();
+export function submitScore(name: string) {
   const player = {
     id: crypto.randomUUID(),
     name: name,
