@@ -5,7 +5,7 @@ import { createControlPanel } from '../control-panel/control-panel.ts';
 import { createBarsPanel } from '../bars-panel/bars-panel.ts';
 import { createCurrentRecipe } from '../current-recipe/current-recipe.ts';
 import { createLivesPanel } from '../lives-panel/lives-panel.ts';
-import { openModalWindow } from '../modal-window/modal-window.ts';
+import { createModalWindow } from '../modal-window/modal-window.ts';
 import state from '../../state/game-state.ts';
 import { createGameOver } from '../game-over/game-over.ts';
 import { createPause } from '../pause/pause.ts';
@@ -31,32 +31,32 @@ export function createLayout() {
       break;
     }
     case 'game-over': {
-      const modalWindow = openModalWindow({ content: createGameOver() });
+      const modalWindow = createModalWindow({ content: createGameOver() });
       state.closeModalWindow = modalWindow.close;
       add(main, modalWindow.element);
       break;
     }
     case 'paused': {
-      const modalWindow = openModalWindow({ content: createPause() });
+      const modalWindow = createModalWindow({ content: createPause() });
       state.closeModalWindow = modalWindow.close;
       add(main, modalWindow.element);
       break;
     }
     case 'leaderboard': {
       state.closeModalWindow();
-      const modalWindow = openModalWindow({ content: createLeaderboard() });
+      const modalWindow = createModalWindow({ content: createLeaderboard(), size: 'wide' });
       state.closeModalWindow = modalWindow.close;
       add(main, modalWindow.element);
       break;
     }
     case 'menu': {
-      const modalWindow = openModalWindow({ content: createSettings() });
+      const modalWindow = createModalWindow({ content: createSettings() });
       state.closeModalWindow = modalWindow.close;
       add(main, modalWindow.element);
       break;
     }
     case 'help': {
-      const modalWindow = openModalWindow({ content: createHelp() });
+      const modalWindow = createModalWindow({ content: createHelp(), size: 'wide' });
       state.closeModalWindow = modalWindow.close;
       add(main, modalWindow.element);
       break;

@@ -1,4 +1,4 @@
-import { openModalWindow } from '../../ui/modal-window/modal-window.ts';
+import { createModalWindow } from '../../ui/modal-window/modal-window.ts';
 import { add, button, element } from '../../ui/dom.ts';
 import { clearLeaderboard } from '../../storage/leaderboard-save.ts';
 import { renderLeaderboard } from './render-leaderboard.ts';
@@ -14,7 +14,7 @@ export function renderConfirm() {
   const noButton = button('no', 'button confirm__no-button');
   add(actions, yesButton, noButton);
   add(elementConfirm, text, actions);
-  const modalWindow = openModalWindow({ content: elementConfirm });
+  const modalWindow = createModalWindow({ content: elementConfirm });
   yesButton.addEventListener('click', () => {
     modalWindow.close();
     clearLeaderboard();
